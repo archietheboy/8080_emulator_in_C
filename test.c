@@ -10,14 +10,6 @@ enum
 	REG_M = 0x6	// 110b
 };
 
-enum
-{
-	RP_BC = 0x0,	// 00b
-	RP_DE = 0x1,	// 01b
-	RP_HL = 0x2,	// 10b
-	RP_SP = 0x3	// 11b
-}
-
 char register_name(unsigned char bitpattern)
 {
 	switch (bitpattern)
@@ -34,105 +26,40 @@ char register_name(unsigned char bitpattern)
 	}
 }
 
-/* Data Transfer Group:
- 	This group of instructions transfers data to and from registers and memory.
-	Condition flags are not affected by any instruction in this group.
- */
-
-int 8080_dissasembly_data_transfer_group(unsigned char *code)
+enum
 {
-	unsigned char ddd = (*code >> 3) & 0x7;
-	unsigned char sss = *code & 0x7;
-	int opbytes = 1;
+	RP_BC = 0x0,	// 00b
+	RP_DE = 0x1,	// 01b
+	RP_HL = 0x2,	// 10b
+	RP_SP = 0x3	// 11b
+};
 
-	/* MVI M,data	(Move to memory immediate)
-		((H)(L)) <- (byte 2)
-		The content of byte 2 of the instruction is moved to the memory location whose address is in registers H and L.
-			byte 0: 00110110
-			byte 1:	'data'
-	 */
-	if ( *code == 0x36 )
-	{
-		printf("MVI    M,#0x%02x", code[1]); return 2;
-	}
+enum
+{
+	COND_NZ = 0x0,	// not zero (Z=0)
+	COND_Z  = 0x1,	// zero (Z=1)
+	COND_NC = 0x2,	// no carry (CY=0)
+	COND_C  = 0x3,	// carry (CY=1)
+	COND_PO = 0x4,	// parity odd (P=0)
+	COND_PE = 0x5,	// parity even (P=1)
+	COND_P  = 0x6,	// plus (S=0)
+	COND_M  = 0x7	// minus (S=1)
+};
 
-	/* LDA addr	(Load Accumulator direct)
-		(A) <- ((byte3)(byte2))
-		The content of the memory location, whose address is specified in byte 2 and byte 3 of the instruction, is moved to register A.
-			byte 0: 00111010
-			byte 1: 'low-order addr'
-			byte 2: 'high-order addr'
-	 */	
-	if ( *code == 0x3A )
+char *condition_name(unsigned char bitpattern)
+{
+	switch (bitpattern)
 	{
-		printf("LDA    $%02x%02x", code[2], code[1]); return 3;
+		case COND_NZ: return "NZ";
+		case COND_Z: return "Z";
+		case COND_NC: return "NC";
+		case COND_C: return "C";
+		case COND_PO: return "PO";
+		case COND_PE: return "PE";
+		case COND_P: return "P";
+		case COND_M: return "M";
+		default: return "?";
 	}
-
-	/* STA addr	(Store Accumulator direct)
-		((byte3)(byte2)) <- (A)
-		The content of the accumulator is moved to the memory location whose address is specified in byte 2 and byte 3 of the instruction.
-			byte 0: 00110010
-			byte 1: 'low-order addr'
-			byte 2: 'high-order addr'
-	 */
-	if ( *code == 0x32 )
-	{
-		printf("STA    $%02x%02x", code[2], code[1]); return 3;
-	}
-
-	/* LHLD addr	(Load H and L direct)
-		(L) <- ((byte3)(byte2))
-		(H) <- ((byte3)(byte2)+1)
-		The content of the memory location, whose address is specified in byte 2 and byte 3 of the instruction, is moved to register L.
-		The content of the memory location at the succeeding address is moved to register H.
-			byte 0: 00101010
-			byte 1: 'low-order addr'
-			byte 2: 'high-order addr'
-	 */
-	if ( *code == 0x2A )
-	{
-		printf("LHLD   $%02x%02x", code[2], code[1]); return 3;
-	}
-
-	/* SHLD addr	(Store H and L direct)
-		((byte3)(byte2)) <- (L)
-		((byte3)(byte2)+1) <- (H)
-		The content of register L is moved to the memory location whose address is specified in byte 2 and byte 3.
-		The content of register H is moved to the succeeding memory location.
-	 */
-	if ( *code == 0x22 )
-	{
-		printf("SHLD   $%02x%02x", code[2], code[1]); return 3;
-	}
-
-	/* MOV r,M	(Move from memory)
-	 	(r) <- ((H)(L))
-		The contents of the memory location, whose address is in registers H and L, is moved to register r.
-		01-DDD-110
-	 */
-	if ( sss == REG_M )
-	{
-		printf("MOV    %c,M", register_name(ddd));
-	}
-	/* MOV M,r	(Move to memory)
-	 	((H)(L)) <- (r)
-		The contents of register r is moved to the memory location whose address is in registers H and L.
-		01110-SSS
-	 */
-	else if ( ddd == 0x6 )
-	{
-		printf("MOV    M,%c", register_name(sss));
-	}
-	/* MOV r1,r2	(Move register)
-	 	(r1) <- (r2)
-		The contents of register r2 is moved to register r1.
-		01-DDD-SSS
-	 */
-	else
-	{
-		printf("MOV    %c,%c", register_name(ddd), register_name(sss));
-	}
-	return opbytes;
 }
 
 int 8080_dissasembly_opcode(unsigned char *codebuffer, int pc)
@@ -142,288 +69,272 @@ int 8080_dissasembly_opcode(unsigned char *codebuffer, int pc)
 	printf("%04x ", pc); /* printing offset into the code as a 16-bit hexadecimal address */
 	switch ( *code )
 	{
-		case 0x07:
+		case 0x07: // 00000111
 			/* RLC		(Rotate left)
 				(A[n+1]) <- (A[n]); (A[0]) <- (A[7])
 				(CY) <- (A[7])
-				The content of the accumulator is rotated left one position.
-				The low order bit and the CY flag are both set to the value shifted out of the high order bit position.
-				Only the CY flag is affected.
-					byte 0: 00000111
+				Notes:
+					- The low order bit and the CY flag are both set to the value shifted out of the high order bit position.
+					- Only the CY flag is affected.
 			 */
 			printf("RLC");
 			break;
-		case 0x0f:
+		case 0x0f: // 00001111
 			/* RRC		(Rotate right)
 				(A[n]) <- (A[n+1]); (A[7]) <- (A[0])
 				(CY) <- (A[0])
-				The content of the accumulator is rotated right one position.
-				The high order bit and the CY flag are both set to the value shifted out of the low order bit position.
-				Only the CY flag is affected.
-					byte 0: 00001111
+				Notes:
+					- The high order bit and the CY flag are both set to the value shifted out of the low order bit position.
+					- Only the CY flag is affected.
 			 */
 			printf("RRC");
 			break;
-		case 0x17:
+		case 0x17: // 00010111
 			/* RAL		(Rotate left through carry)
 				(A[n+1]) <- (A[n]); (CY) <- (A[7])
 				(A[0]) <- (CY)
-				The content of the accumulator is rotated left one position through the CY flag.
-				The low order bit is set equal to the CY flag and the CY flag is set to the value shifted out of the high order bit.
-				Only the CY flag is affected.
-					byte 0: 00010111
+				Notes:
+					- The low order bit is set equal to the CY flag and the CY flag is set to the value shifted out of the high order bit.
+					- Only the CY flag is affected.
 			 */
 			printf("RAL");
 			break;
-		case 0x1f:
+		case 0x1f: // 00011111
 			/* RAR		(Rotate right through carry)
 				(A[n]) <- (A[n+1]); (CY) <- (A[0])
 				(A[7]) <- (CY)
-				The content of the accumulator is rotated right one position through the CY flag.
-				The high order bit is set equal to the CY flag and the CY flag is set to the value shited out of the low order bit.
-				Only the CY flag is affected.
-					byte 0: 00011111
+				Notes:
+					- The high order bit is set equal to the CY flag and the CY flag is set to the value shited out of the low order bit.
+					- Only the CY flag is affected.
 			 */
 			printf("RAR");
 			break;
-		case 0x27:
+		case 0x27: // 00100111
 			/* DAA		(Decimal Adjust Accumulator)
 				The eight-bit number in the accumulator is adjusted to form two four-bit Binary-Coded-Decimal digits by the following process:
 				1. If the value of the least significant 4 bits of the accumulator is greater than 9 OR if the AC flag is set, 6 is added to the accumulator.
 				2. If the value of the most significant 4 bits is now greater than 9, OR if the CY flag is set, 6 is added to the most significant 4 bits of the accumulator.
-					byte 0: 00100111
 			 */
 			printf("DAA");
 			break;
-		case 0x2a:
+		case 0x2a: // 00101010
 			/* LHLD addr	(Load H and L direct)
 				(L) <- ((byte3)(byte2))
 				(H) <- ((byte3)(byte2)+1)
-				The content of the memory location, whose address is specified in byte 2 and byte 3 of the instruction, is moved to register L.
-				The content of the memory location at the succeeding address is moved to register H.
-					byte 0: 00101010
-					byte 1: 'low-order addr'
-					byte 2: 'high-order addr'
 			 */
 			printf("LHLD   $%02x%02x", code[2], code[1]);
 			opbytes = 3;
 			break;
-		case 0x32:
+		case 0x2f: // 00101111
+			/* CMA		(Complement accumulator)
+				(A) <- (_A_)
+				Note: No flags are affected.
+			 */
+			printf("CMA");
+			break;
+		case 0x32: // 00110010
 			/* STA addr	(Store Accumulator direct)
 				((byte3)(byte2)) <- (A)
-				The content of the accumulator is moved to the memory location whose address is specified in byte 2 and byte 3 of the instruction.
-					byte 0: 00110010
-					byte 1: 'low-order addr'
-					byte 2: 'high-order addr'
 			 */
 			printf("STA    $%02x%02x", code[2], code[1]);
 			opbytes = 3;
 			break;
-		case 0x34:
+		case 0x34: // 00110100
 			/* INR M	(Increment memory)
 				((H)(L)) <- ((H)(L)) + 1
-				The content of the memory location whose address is contained in the H and L registers is incremented by one.
 				Note: All condition flags except CY are affected.
-					byte 0: 00110100
 			 */
 			printf("INR    M");
 			break;
-		case 0x35:
+		case 0x35: // 00110101
 			/* DCR M	(Decrement memory)
 				((H)(L)) <- ((H)(L)) - 1
-				The content of the memory location whose address is contained in the H and L registers is decremented by one.
 				Note: All condition flags except CY are affected.
 			 */
 			printf("DCR    M");
 			break;
-		case 0x36:
+		case 0x36: // 00110110
 			/* MVI M,data	(Move to memory immediate)
 				((H)(L)) <- (byte 2)
-				The content of byte 2 of the instruction is moved to the memory location whose address is in registers H and L.
-					byte 0: 00110110
-					byte 1:	'data'
 			 */
 			printf("MVI    M,#0x%02x", code[1]);
 			opbytes = 2;
 			break;
-		case 0x3a:
+		case 0x3a: // 00111010
 			/* LDA addr	(Load Accumulator direct)
 				(A) <- ((byte3)(byte2))
-				The content of the memory location, whose address is specified in byte 2 and byte 3 of the instruction, is moved to register A.
-					byte 0: 00111010
-					byte 1: 'low-order addr'
-					byte 2: 'high-order addr'
 			 */	
 			printf("LDA    $%02x%02x", code[2], code[1]);
 			opbytes = 3;
 			break;
-		case 0x86:
+		case 0x37: // 00110111
+			/* STC		(Set carry)
+				(CY) <- 1
+				Note: No other flags are affected.
+			 */
+			printf("STC");
+			break;
+		case 0x3f: // 00111111
+			/* CMC		(Complement carry)
+				(CY) <- (_CY_)
+				Note: No other flags are affected.
+			 */
+			printf("CMC");
+			break;
+		case 0x86: // 10000110
 			/* ADD M	(Add memory)
 				(A) <- (A) + ((H)(L))
-				The content of the memory location whose address is contained in the H and L registers is added to the content of the accumulator.
-				The result is placed in the accumulator.
-					byte 0: 10000110
 			 */
 			printf("ADD    M");
 			break;
-		case 0x8e:
+		case 0x8e: // 10001110
 			/* ADC M	(Add memory with carry)
 				(A) <- ((H)(L)) + (CY)
-				The content of the memory location whose address is contained in the H and L registers and the content of the CY flag are added to the accumulator.
-				The result is placed in the accumulator.
-					byte 0: 10001110
 			 */
 			printf("ADC    M");
 			break;
-		case 0x96:
+		case 0x96: // 10010110
 			/* SUB M	(Subtract memory)
 				(A) <- (A) - ((H)(L)
-				The content of the memory location whose address is contained in the H and L registers is substracted from the content of the accumulator.
-				The result is placed in the accumulator.
-					byte 0: 10010110
 			 */
 			printf("SUB    M");
 			break;
-		case 0x9e:
+		case 0x9e: // 10011110
 			/* SBB M	(Subtract memory with borrow)
 				(A) <- (A) - ((H)(L)) - (CY)
-				The content of the memory location whose address is contained in the H and L registers and the content of the CY flag are both subtracted from the accumulator.
-				The result is placed in the accumulator.
-					byte 0: 10011110
 			 */
 			printf("SBB    M");
 			break;
-		case 0xa6:
+		case 0xa6: // 10100110
 			/* ANA M	(AND memory)
 				(A) <- (A) & ((H)(L))
-				The contents of the memory location whose address is contained in the H and L registers is logically anded with the content of the accumulator.
-				The result is placed in the accumulator. The CY flag is cleared.
-					byte 0: 10100110
 			 */
 			printf("ANA    M");
 			break;
-		case 0xae:
+		case 0xae: // 10101110
 			/* XRA M	(Exclusive OR memory)
 				(A) <- (A) XOR ((H)(L))
-				The content of the memory location whose address is contained in the H and L registers is exclusive-OR'd with the content of the accumulator.
-				The result is placed in the accumulator. The CY and AC flags are cleared.
-					byte 0: 10101110
+				Note: The CY and AC flags are cleared.
 			 */
 			printf("XRA    M");
 			break;
-		case 0xb6:
+		case 0xb6: // 10110110
 			/* ORA M	(OR memory)
 				(A) <- (A) V ((H)(L))
-				The content of the memory location whose address is contained in the H and L registers is inclusive-OR'd with the content of the accumulator.
-				The result is placed in the accumulator. The CY and AC flags are cleared.
-					byte 0: 10110110
+				Note: The CY and AC flags are cleared.
 			 */
 			printf("ORA    M");
 			break;
-		case 0xbe:
+		case 0xbe: // 10111110
 			/* CMP M	(Compare memory)
 				(A) - ((H)(L))
-				The content of the memory whose address is contained in the H and L registers is subtracted from the accumulator.
-				The accumulator remains unchanged. The condition flags are set as a result of the subtraction.
-				The Z flag is set to 1 if (A) = ((H)(L)). The CY flag is set to 1 if (A) < ((H)(L)).
-					byte 0: 10111110
+				Notes:
+					- The condition flags are set as a result of the subtraction.
+					- The Z flag is set to 1 if (A) = ((H)(L)). The CY flag is set to 1 if (A) < ((H)(L)).
 			 */
 			printf("CMP    M");
 			break;
-		case 0xc6:
+		case 0xc3: // 11000011
+			/* JMP addr	(Jump)
+				(PC) <- (byte3)(byte2)
+			 */
+			printf("JMP    $%02x%02x", code[2], code[1]);
+			opbytes = 3;
+			break;
+		case 0xc6: // 11000110
 			/* ADI data	(Add immediate)
 				(A) <- (A) + (byte2)
-				The content of the second byte of the instruction is added to the content of the accumulator.
-				The result is placed in the accumulator.
-					byte 0: 11000110
-					byte 1: 'data'
 			 */
 			printf("ADI	#0x%02x", code[1]);
 			opbytes = 2;
 			break;
-		case 0xce:
+		case 0xc9: // 11001001
+			/* RET		(Return)
+			 	(PCL) <- ((SP))
+				(PCH) <- ((SP) + 1)
+				(SP) <- (SP) + 2
+			 */
+			printf("RET");
+			break;
+		case 0xcd: // 11001101
+			/* CALL addr	(Call)
+				((SP) - 1) <- (PCH)
+				((SP) - 2) <- (PCL)
+				(SP) <- (SP) - 2
+				(PC) <- (byte3)(byte2)
+			 */
+			printf("CALL   $%02x%02x", code[2], code[1]);
+			opbytes = 3;
+			break;
+		case 0xce: // 11001110
 			/* ACI data	(Add immediate with carry)
 				(A) <- (A) + (byte2) + (CY)
-				The content of the second byte of the instruction and the content of the CY flag are added to the contents of the accumulator.
-				The result is placed in the accumulator.
-					byte 0: 11001110
-					byte 1: 'data'
 			 */
 			printf("ACI    #0x%02x", code[1]);
 			opbytes = 2;
 			break;
-		case 0xd6:
+		case 0xd6: // 11010110
 			/* SUI data	(Subtract immediate)
 				(A) <- (A) - (byte2)
-				The content of the second byte of the instruction is substracted from the content of the accumulator.
-				The result is placed in the accumulator.
-					byte 0: 11010110
-					byte 1: 'data'
 			 */
 			printf("SUI    #0x%02x", code[1]);
 			opbytes = 2;
 			break;
-		case 0xde:
+		case 0xde: // 11011110
 			/* SBI data	(Substract immediate with borrow)
 				(A) <- (A) - (byte2) - (CY)
-				The contents of the second byte of the instruction and the contents of the CY flag are both subtracted from the accumulator.
-				The result is placed in the accumulator.
-					byte 0: 11011110
-					byte 1: 'data'
 			 */
 			printf("SBI    #0x%02x", code[1]);
 			opbytes = 2;
 			break;
-		case 0xe6:
+		case 0xe6: // 11100110
 			/* ANI data	(AND immediate)
 				(A) <- (A) & (byte2)
-				The content of the second byte of the instruction is logically anded with the contents of the accumulator.
-				The result is placed in the accumulator. The CY and AC flags are cleared.
-					byte 0: 11100110
-					byte 1: 'data'
+				Note: The CY and AC flags are cleared.
 			 */
 			printf("ANI    #0x%02x", code[1]);
 			opbytes = 2;
 			break;
-		case 0xeb:
+		case 0xe9: // 11101001
+			/* PCHL		(Jump H and L indirect - move H and L to PC)
+				(PCH) <- (H)
+				(PCL) <- (L)
+			 */
+		case 0xeb: // 11101011
 			/* XCHG		(Exchange H and L with D and E)
 				(H) <- (D)
 				(L) <- (E)
-				The contents of registers H and L are exchanged with the contents of registers D and E.
-					byte 0: 11101011
 			 */
 			printf("XCHG");
 			break;
-		case 0xee:
+		case 0xee: // 11101110
 			/* XRI data	(Exclusive OR immediate)
 				(A) <- (A) XOR (byte2)
-				The content of the second byte of the instruction is exclusive-OR'd with the content of the accumulator.
-				The result is placed in the accumulator. The CY and AC flags are cleared.
-					byte 0: 11101110
-					byte 1: 'data'
+				Note: The CY and AC flags are cleared.
 			 */
 			printf("XRI    #0x%02x", code[1]);
 			opbytes = 2;
 			break;
-		case 0xf6:
+		case 0xf6: // 11110110
 			/* ORI data	(OR immediate)
 				(A) <- (A) V (byte2)
-				The content of the second byte of the instruction is inclusive-OR'd with the content of the accumulator.
-				The result is placed in the accumulator. The CY and AC flags are cleared.
-					byte 0: 11110110
-					byte 1: 'data'
+				Note: The CY and AC flags are cleared.
 			 */
 			printf("ORI    #0x%02x", code[1]);
 			opbytes = 2;
 			break;
-		case 0xfe:
+		case 0xf9: // 11111001
+			/* SPHL		(Move HL to SP)
+				(SP) <- (H)(L)
+			 */
+			printf("SPHL");
+			break;
+		case 0xfe: // 11111110
 			/* CPI data	(Compare immediate)
 				(A) - (byte2)
-				The content of the second byte of the instruction is subtracted from the accumulator.
-				The condition flags are set by the result of the subtraction.
-				The Z flag is set to 1 if (A) = (byte2). The CY flag is set to 1 if  (A) < (byte2).
-					byte 0: 11111110
-					byte 1: 'data'
+				Notes:
+					- The condition flags are set by the result of the subtraction.
+					- The Z flag is set to 1 if (A) = (byte2). The CY flag is set to 1 if  (A) < (byte2).
 			 */
 		default:
 			break;
