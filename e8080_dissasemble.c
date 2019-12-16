@@ -38,6 +38,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 	unsigned char *code = &codebuffer[pc];
 	int opbytes = 1; // initializing to 1 as most of the structions have size 1
 	printf("%04x\t\t", pc); // printing offset into the code as a 16-bit hexadecimal address
+	const char *fmt;
 	switch (*code)
 	{
 		case 0x40: // 01000000
@@ -46,151 +47,151 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				MOV r1,r2
 					(r1) <- (r2)
 			*/
-			printf("MOV	B,B");
+			fmt = "MOV	B,B";
 			break;
 		case 0x41: // 01000001
-			printf("MOV	B,C");
+			fmt = "MOV	B,C";
 			break;
 		case 0x42: // 01000010
-			printf("MOV	B,D");
+			fmt = "MOV	B,D";
 			break;
 		case 0x43: // 01000011
-			printf("MOV	B,E");
+			fmt = "MOV	B,E";
 			break;
 		case 0x44: // 01000100
-			printf("MOV	B,H");
+			fmt = "MOV	B,H";
 			break;
 		case 0x45: // 01000101
-			printf("MOV	B,L");
+			fmt = "MOV	B,L";
 			break;
 		case 0x47: // 01000111
-			printf("MOV	B,A");
+			fmt = "MOV	B,A";
 			break;
 		case 0x48: // 01001000
-			printf("MOV	C,B");
+			fmt = "MOV	C,B";
 			break;
 		case 0x49: // 01001001
-			printf("MOV	C,C");
+			fmt = "MOV	C,C";
 			break;
 		case 0x4a: // 01001010
-			printf("MOV	C,D");
+			fmt = "MOV	C,D";
 			break;
 		case 0x4b: // 01001011
-			printf("MOV	C,E");
+			fmt = "MOV	C,E";
 			break;
 		case 0x4c: // 01001100
-			printf("MOV	C,H");
+			fmt = "MOV	C,H";
 			break;
 		case 0x4d: // 01001101
-			printf("MOV	C,L");
+			fmt = "MOV	C,L";
 			break;
 		case 0x4f: // 01001111
-			printf("MOV	C,A");
+			fmt = "MOV	C,A";
 			break;
 		case 0x50: // 01010000
-			printf("MOV	D,B");
+			fmt = "MOV	D,B";
 			break;
 		case 0x51: // 01010001
-			printf("MOV	D,C");
+			fmt = "MOV	D,C";
 			break;
 		case 0x52: // 01010010
-			printf("MOV	D,D");
+			fmt = "MOV	D,D";
 			break;
 		case 0x53: // 01010011
-			printf("MOV	D,E");
+			fmt = "MOV	D,E";
 			break;
 		case 0x54: // 01010100
-			printf("MOV	D,H");
+			fmt = "MOV	D,H";
 			break;
 		case 0x55: // 01010101
-			printf("MOV	D,L");
+			fmt = "MOV	D,L";
 			break;
 		case 0x57: // 01010111
-			printf("MOV	D,A");
+			fmt = "MOV	D,A";
 			break;
 		case 0x58: // 01011000
-			printf("MOV	E,B");
+			fmt = "MOV	E,B";
 			break;
 		case 0x59: // 01011001
-			printf("MOV	E,C");
+			fmt = "MOV	E,C";
 			break;
 		case 0x5a: // 01011010
-			printf("MOV	E,D");
+			fmt = "MOV	E,D";
 			break;
 		case 0x5b: // 01011011
-			printf("MOV	E,E");
+			fmt = "MOV	E,E";
 			break;
 		case 0x5c: // 01011100
-			printf("MOV	E,H");
+			fmt = "MOV	E,H";
 			break;
 		case 0x5d: // 01011101
-			printf("MOV	E,L");
+			fmt = "MOV	E,L";
 			break;
 		case 0x5f: // 01011111
-			printf("MOV	E,A");
+			fmt = "MOV	E,A";
 			break;
 		case 0x60: // 01100000
-			printf("MOV	H,B");
+			fmt = "MOV	H,B";
 			break;
 		case 0x61: // 01100001
-			printf("MOV	H,C");
+			fmt = "MOV	H,C";
 			break;
 		case 0x62: // 01100010
-			printf("MOV	H,D");
+			fmt = "MOV	H,D";
 			break;
 		case 0x63: // 01100011
-			printf("MOV	H,E");
+			fmt = "MOV	H,E";
 			break;
 		case 0x64: // 01100100
-			printf("MOV	H,H");
+			fmt = "MOV	H,H";
 			break;
 		case 0x65: // 01100101
-			printf("MOV	H,L");
+			fmt = "MOV	H,L";
 			break;
 		case 0x67: // 01100111
-			printf("MOV	H,A");
+			fmt = "MOV	H,A";
 			break;
 		case 0x68: // 01101000
-			printf("MOV	L,B");
+			fmt = "MOV	L,B";
 			break;
 		case 0x69: // 01101001
-			printf("MOV	L,C");
+			fmt = "MOV	L,C";
 			break;
 		case 0x6a: // 01101010
-			printf("MOV	L,D");
+			fmt = "MOV	L,D";
 			break;
 		case 0x6b: // 01101011
-			printf("MOV	L,E");
+			fmt = "MOV	L,E";
 			break;
 		case 0x6c: // 01101100
-			printf("MOV	L,H");
+			fmt = "MOV	L,H";
 			break;
 		case 0x6d: // 01101101
-			printf("MOV	L,L");
+			fmt = "MOV	L,L";
 			break;
 		case 0x6f: // 01101111
-			printf("MOV	L,A");
+			fmt = "MOV	L,A";
 			break;
 		case 0x78: // 01111000
-			printf("MOV	A,B");
+			fmt = "MOV	A,B";
 			break;
 		case 0x79: // 01111001
-			printf("MOV	A,C");
+			fmt = "MOV	A,C";
 			break;
 		case 0x7a: // 01111010
-			printf("MOV	A,D");
+			fmt = "MOV	A,D";
 			break;
 		case 0x7b: // 01111011
-			printf("MOV	A,E");
+			fmt = "MOV	A,E";
 			break;
 		case 0x7c: // 01111100
-			printf("MOV	A,H");
+			fmt = "MOV	A,H";
 			break;
 		case 0x7d: // 01111101
-			printf("MOV	A,L");
+			fmt = "MOV	A,L";
 			break;
 		case 0x7f: // 01111111
-			printf("MOV	A,A");
+			fmt = "MOV	A,A";
 			break;
 		case 0x46: // 01000110
 			/*
@@ -198,25 +199,25 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				MOV r,M
 					(r) <- ((H)(L))
 			*/
-			printf("MOV	B,M");
+			fmt = "MOV	B,M";
 			break;
 		case 0x4e: // 01001110
-			printf("MOV	C,M");
+			fmt = "MOV	C,M";
 			break;
 		case 0x56: // 01010110
-			printf("MOV	D,M");
+			fmt = "MOV	D,M";
 			break;
 		case 0x5e: // 01011110
-			printf("MOV	E,M");
+			fmt = "MOV	E,M";
 			break;
 		case 0x66: // 01100110
-			printf("MOV	H,M");
+			fmt = "MOV	H,M";
 			break;
 		case 0x6e: // 01101110
-			printf("MOV	L,M");
+			fmt = "MOV	L,M";
 			break;
 		case 0x7e: // 01111110
-			printf("MOV	A,M");
+			fmt = "MOV	A,M";
 			break;
 		case 0x70: // 01110000
 			/*
@@ -224,25 +225,25 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				MOV M,r
 					((H)(L)) <- (r)
 			*/
-			printf("MOV	M,B");
+			fmt = "MOV	M,B";
 			break;
 		case 0x71: // 01110001
-			printf("MOV	M,C");
+			fmt = "MOV	M,C";
 			break;
 		case 0x72: // 01110010
-			printf("MOV	M,D");
+			fmt = "MOV	M,D";
 			break;
 		case 0x73: // 01110011
-			printf("MOV	M,E");
+			fmt = "MOV	M,E";
 			break;
 		case 0x74: // 01110100
-			printf("MOV	M,H");
+			fmt = "MOV	M,H";
 			break;
 		case 0x75: // 01110101
-			printf("MOV	M,L");
+			fmt = "MOV	M,L";
 			break;
 		case 0x77: // 01110111
-			printf("MOV	M,A");
+			fmt = "MOV	M,A";
 			break;
 		case 0x06: // 00000110
 			/*
@@ -250,31 +251,31 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				MVI r,data
 					(r) <- (byte2)
 			*/
-			printf("MVI	B,#0x%02x", code[1]);
+			fmt = "MVI	B,#0x%02x";
 			opbytes = 2;
 			break;
 		case 0x0e: // 00001110
-			printf("MVI	C,#0x%02x", code[1]);
+			fmt = "MVI	C,#0x%02x";
 			opbytes = 2;
 			break;
 		case 0x16: // 00010110
-			printf("MVI	D,#0x%02x", code[1]);
+			fmt = "MVI	D,#0x%02x";
 			opbytes = 2;
 			break;
 		case 0x1e: // 00011110
-			printf("MVI	E,#0x%02x", code[1]);
+			fmt = "MVI	E,#0x%02x";
 			opbytes = 2;
 			break;
 		case 0x26: // 00100110
-			printf("MVI	H,#0x%02x", code[1]);
+			fmt = "MVI	H,#0x%02x";
 			opbytes = 2;
 			break;
 		case 0x2e: // 00101110
-			printf("MVI	L,#0x%02x", code[1]);
+			fmt = "MVI	L,#0x%02x";
 			opbytes = 2;
 			break;
 		case 0x3e: // 00111110
-			printf("MVI	A,#0x%02x", code[1]);
+			fmt = "MVI	A,#0x%02x";
 			opbytes = 2;
 			break;
 		case 0x36: // 00110110
@@ -283,7 +284,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				MVI M,data
 					((H)(L)) <- (byte2)
 			*/
-			printf("MVI	M,#0x%02x", code[1]);
+			fmt = "MVI	M,#0x%02x";
 			opbytes = 2;
 			break;
 		case 0x01: // 00000001
@@ -293,19 +294,19 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 					(rh) <- (byte3)
 					(rl) <- (byte2)
 			*/
-			printf("LXI	B,#0x%02x%02x", code[2], code[1]);
+			fmt = "LXI	B,#0x%02x%02x";
 			opbytes = 3;
 			break;
 		case 0x11: // 00010001
-			printf("LXI	D,#0x%02x%02x", code[2], code[1]);
+			fmt = "LXI	D,#0x%02x%02x";
 			opbytes = 3;
 			break;
 		case 0x21: // 00100001
-			printf("LXI	H,#0x%02x%02x", code[2], code[1]);
+			fmt = "LXI	H,#0x%02x%02x";
 			opbytes = 3;
 			break;
 		case 0x31: // 00110001
-			printf("LXI	SP,#0x%02x%02x", code[2], code[1]);
+			fmt = "LXI	SP,#0x%02x%02x";
 			opbytes = 3;
 			break;
 		case 0x3a: // 00111010
@@ -314,7 +315,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				LDA addr
 					(A) <- ((byte3)(byte2))
 			*/
-			printf("LDA	#$%02x%02x", code[2], code[1]);
+			fmt = "LDA	#$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0x32: // 00110010
@@ -323,7 +324,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				STA addr
 					((byte3)(byte2)) <- (A)
 			*/
-			printf("STA	#$%02x%02x", code[2], code[1]);
+			fmt = "STA	#$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0x2a: // 00101010
@@ -333,7 +334,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 					(L) <- ((byte3)(byte2))
 					(H) <- ((byte3)(byte2) + 1)
 			*/
-			printf("LHLD	#$%02x%02x", code[2], code[1]);
+			fmt = "LHLD	#$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0x22: // 00100010
@@ -343,7 +344,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 					((byte3)(byte2)) <- (L)
 					((byte3)(byte2) + 1) <- (H)
 			*/
-			printf("SHLD	#$%02x%02x", code[2], code[1]);
+			fmt = "SHLD	#$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0x0a: // 00001010
@@ -352,10 +353,10 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				LDAX rp
 					(A) <- ((rp))
 			*/
-			printf("LDAX	B");
+			fmt = "LDAX	B";
 			break;
 		case 0x1a: // 00011010
-			printf("LDAX	D");
+			fmt = "LDAX	D";
 			break;
 		case 0x02: // 00000010
 			/*
@@ -363,10 +364,10 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				STAX rp
 					((rp)) <- (A)
 			*/
-			printf("STAX	B");
+			fmt = "STAX	B";
 			break;
 		case 0x12: // 00010010
-			printf("STAX	D");
+			fmt = "STAX	D";
 			break;
 		case 0xeb: // 11101011
 			/*
@@ -375,7 +376,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 					(H) <-> (D)
 					(L) <-> (E)
 			*/
-			printf("XCHG");
+			fmt = "XCHG";
 			break;
 		case 0x80: // 10000000
 			/*
@@ -385,25 +386,25 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: Z,S,P,CY,AC
 			*/
-			printf("ADD	B");
+			fmt = "ADD	B";
 			break;
 		case 0x81: // 10000001
-			printf("ADD	C");
+			fmt = "ADD	C";
 			break;
 		case 0x82: // 10000010
-			printf("ADD	D");
+			fmt = "ADD	D";
 			break;
 		case 0x83: // 10000011
-			printf("ADD	E");
+			fmt = "ADD	E";
 			break;
 		case 0x84: // 10000100
-			printf("ADD	H");
+			fmt = "ADD	H";
 			break;
 		case 0x85: // 10000101
-			printf("ADD	L");
+			fmt = "ADD	L";
 			break;
 		case 0x87: // 10000111
-			printf("ADD	A");
+			fmt = "ADD	A";
 			break;
 		case 0x86: // 10000110
 			/*
@@ -413,7 +414,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: Z,S,P,CY,AC
 			*/
-			printf("ADD	M");
+			fmt = "ADD	M";
 			break;
 		case 0xc6: // 11000110
 			/*
@@ -423,7 +424,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: Z,S,P,CY,AC
 			*/
-			printf("ADI	#0x%02x", code[1]);
+			fmt = "ADI	#0x%02x";
 			opbytes = 2;
 			break;
 		case 0x88: // 10001000
@@ -434,25 +435,25 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: Z,S,P,CY,AC
 			*/
-			printf("ADC	B");
+			fmt = "ADC	B";
 			break;
 		case 0x89: // 10001001
-			printf("ADC	C");
+			fmt = "ADC	C";
 			break;
 		case 0x8a: // 10001010
-			printf("ADC	D");
+			fmt = "ADC	D";
 			break;
 		case 0x8b: // 10001011
-			printf("ADC	E");
+			fmt = "ADC	E";
 			break;
 		case 0x8c: // 10001100
-			printf("ADC	H");
+			fmt = "ADC	H";
 			break;
 		case 0x8d: // 10001101
-			printf("ADC	L");
+			fmt = "ADC	L";
 			break;
 		case 0x8f: // 10001111
-			printf("ADC	A");
+			fmt = "ADC	A";
 			break;
 		case 0x8e: // 10001110
 			/*
@@ -462,7 +463,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: Z,S,P,CY,AC
 			*/
-			printf("ADC	M");
+			fmt = "ADC	M";
 			break;
 		case 0xce: // 11001110
 			/*
@@ -472,7 +473,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: Z,S,P,CY,AC
 			*/
-			printf("ACI	#0x%02x", code[1]);
+			fmt = "ACI	#0x%02x";
 			opbytes = 2;
 			break;
 		case 0x90: // 10010000
@@ -483,25 +484,25 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: Z,S,P,CY,AC
 			*/
-			printf("SUB	B");
+			fmt = "SUB	B";
 			break;
 		case 0x91: // 10010001
-			printf("SUB	C");
+			fmt = "SUB	C";
 			break;
 		case 0x92: // 10010010
-			printf("SUB	D");
+			fmt = "SUB	D";
 			break;
 		case 0x93: // 10010011
-			printf("SUB	E");
+			fmt = "SUB	E";
 			break;
 		case 0x94: // 10010100
-			printf("SUB	H");
+			fmt = "SUB	H";
 			break;
 		case 0x95: // 10010101
-			printf("SUB	L");
+			fmt = "SUB	L";
 			break;
 		case 0x97: // 10010111
-			printf("SUB	A");
+			fmt = "SUB	A";
 			break;
 		case 0x96: // 10010110
 			/*
@@ -511,7 +512,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: Z,S,P,CY,AC
 			*/
-			printf("SUB	M");
+			fmt = "SUB	M";
 			break;
 		case 0xd6: // 11010110
 			/*
@@ -521,7 +522,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: Z,S,P,CY,AC
 			*/
-			printf("SUI	#0x%02x", code[1]);
+			fmt = "SUI	#0x%02x";
 			opbytes = 2;
 			break;
 		case 0x98: // 10011000
@@ -532,25 +533,25 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: Z,S,P,CY,AC
 			*/
-			printf("SBB	B");
+			fmt = "SBB	B";
 			break;
 		case 0x99: // 10011001
-			printf("SBB	C");
+			fmt = "SBB	C";
 			break;
 		case 0x9a: // 10011010
-			printf("SBB	D");
+			fmt = "SBB	D";
 			break;
 		case 0x9b: // 10011011
-			printf("SBB	E");
+			fmt = "SBB	E";
 			break;
 		case 0x9c: // 10011100
-			printf("SBB	H");
+			fmt = "SBB	H";
 			break;
 		case 0x9d: // 10011101
-			printf("SBB	L");
+			fmt = "SBB	L";
 			break;
 		case 0x9f: // 10011111
-			printf("SBB	A");
+			fmt = "SBB	A";
 			break;
 		case 0x9e: // 10011110
 			/*
@@ -560,7 +561,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: Z,S,P,CY,AC
 			*/
-			printf("SBB	M");
+			fmt = "SBB	M";
 			break;
 		case 0xde: // 11011110
 			/*
@@ -570,7 +571,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: Z,S,P,CY,AC
 			*/
-			printf("SBI	#0x%02x", code[1]);
+			fmt = "SBI	#0x%02x";
 			opbytes = 2;
 			break;
 		case 0x04: // 00000100
@@ -581,25 +582,25 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: Z,S,P,AC
 			*/
-			printf("INR	B");
+			fmt = "INR	B";
 			break;
 		case 0x0c: // 00001100
-			printf("INR	C");
+			fmt = "INR	C";
 			break;
 		case 0x14: // 00010100
-			printf("INR	D");
+			fmt = "INR	D";
 			break;
 		case 0x1c: // 00011100
-			printf("INR	E");
+			fmt = "INR	E";
 			break;
 		case 0x24: // 00100100
-			printf("INR	H");
+			fmt = "INR	H";
 			break;
 		case 0x2c: // 00101100
-			printf("INR	L");
+			fmt = "INR	L";
 			break;
 		case 0x3c: // 00111100
-			printf("INR	A");
+			fmt = "INR	A";
 			break;
 		case 0x34: // 00110100
 			/*
@@ -609,7 +610,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: Z,S,P,AC
 			*/
-			printf("INR	M");
+			fmt = "INR	M";
 			break;
 		case 0x05: // 00000101
 			/*
@@ -619,25 +620,25 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: Z,S,P,AC
 			*/
-			printf("DCR	B");
+			fmt = "DCR	B";
 			break;
 		case 0x0d: // 00001101
-			printf("DCR	C");
+			fmt = "DCR	C";
 			break;
 		case 0x15: // 00010101
-			printf("DCR	D");
+			fmt = "DCR	D";
 			break;
 		case 0x1d: // 00011101
-			printf("DCR	E");
+			fmt = "DCR	E";
 			break;
 		case 0x25: // 00100101
-			printf("DCR	H");
+			fmt = "DCR	H";
 			break;
 		case 0x2d: // 00101101
-			printf("DCR	L");
+			fmt = "DCR	L";
 			break;
 		case 0x3d: // 00111101
-			printf("DCR	A");
+			fmt = "DCR	A";
 			break;
 		case 0x35: // 00110101
 			/*
@@ -647,7 +648,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: Z,S,P,AC
 			*/
-			printf("DCR	M");
+			fmt = "DCR	M";
 			break;
 		case 0x03: // 00000011
 			/*
@@ -655,16 +656,16 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				INX rp
 					(rh)(rl) <- (rh)(rl) + 1
 			*/
-			printf("INX	B");
+			fmt = "INX	B";
 			break;
 		case 0x13: // 00010011
-			printf("INX	D");
+			fmt = "INX	D";
 			break;
 		case 0x23: // 00100011
-			printf("INX	H");
+			fmt = "INX	H";
 			break;
 		case 0x33: // 00110011
-			printf("INX	SP");
+			fmt = "INX	SP";
 			break;
 		case 0x0b: // 00001011
 			/*
@@ -672,16 +673,16 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				DCX rp
 					(rh)(rl) <- (rh)(rl) - 1
 			*/
-			printf("DCX	B");
+			fmt = "DCX	B";
 			break;
 		case 0x1b: // 00011011
-			printf("DCX	D");
+			fmt = "DCX	D";
 			break;
 		case 0x2b: // 00101011
-			printf("DCX	H");
+			fmt = "DCX	H";
 			break;
 		case 0x3b: // 00111011
-			printf("DCX	SP");
+			fmt = "DCX	SP";
 			break;
 		case 0x09: // 00001001
 			/*
@@ -691,16 +692,16 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: CY
 			*/
-			printf("DAD	B");
+			fmt = "DAD	B";
 			break;
 		case 0x19: // 00011001
-			printf("DAD	D");
+			fmt = "DAD	D";
 			break;
 		case 0x29: // 00101001
-			printf("DAD	H");
+			fmt = "DAD	H";
 			break;
 		case 0x39: // 00111001
-			printf("DAD	SP");
+			fmt = "DAD	SP";
 			break;
 		case 0x27: // 00100111
 			/*
@@ -713,7 +714,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 							1. If the value of the least significant 4 bits of the accumulator is greater than 9 or if the AC flag is set, 6 is added to the accumulator.
 							2. If the value of the most 4 bits of the accumulator is now greater than 9, or if the CY flag is set, 6 is added to the most significant 4 bits of the accumulator.
 			*/
-			printf("DAA");
+			fmt = "DAA";
 			break;
 		case 0xa0: // 10100000
 			/*
@@ -724,25 +725,25 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				flags: Z,S,P,CY,AC
 				note: The CY flag is cleared.
 			*/
-			printf("ANA	B");
+			fmt = "ANA	B";
 			break;
 		case 0xa1: // 10100001
-			printf("ANA	C");
+			fmt = "ANA	C";
 			break;
 		case 0xa2: // 10100010
-			printf("ANA	D");
+			fmt = "ANA	D";
 			break;
 		case 0xa3: // 10100011
-			printf("ANA	E");
+			fmt = "ANA	E";
 			break;
 		case 0xa4: // 10100100
-			printf("ANA	H");
+			fmt = "ANA	H";
 			break;
 		case 0xa5: // 10100101
-			printf("ANA	L");
+			fmt = "ANA	L";
 			break;
 		case 0xa7: // 10100111
-			printf("ANA	A");
+			fmt = "ANA	A";
 			break;
 		case 0xa6: // 10100110
 			/*
@@ -753,7 +754,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				flags: Z,S,P,CY,AC
 				note: The CY flag is cleared.
 			*/
-			printf("ANA	M");
+			fmt = "ANA	M";
 			break;
 		case 0xe6: // 11100110
 			/*
@@ -764,7 +765,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				flags: Z,S,P,CY,AC
 				note: The CY and AC flags are cleared.
 			*/
-			printf("ANI	#0x%02x", code[1]);
+			fmt = "ANI	#0x%02x";
 			opbytes = 2;
 			break;
 		case 0xa8: // 10101000
@@ -776,25 +777,25 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				flags: Z,S,P,CY,AC
 				note: The CY and AC flags are cleared.
 			*/
-			printf("XRA	B");
+			fmt = "XRA	B";
 			break;
 		case 0xa9: // 10101001
-			printf("XRA	C");
+			fmt = "XRA	C";
 			break;
 		case 0xaa: // 10101010
-			printf("XRA	D");
+			fmt = "XRA	D";
 			break;
 		case 0xab: // 10101011
-			printf("XRA	E");
+			fmt = "XRA	E";
 			break;
 		case 0xac: // 10101100
-			printf("XRA	H");
+			fmt = "XRA	H";
 			break;
 		case 0xad: // 10101101
-			printf("XRA	L");
+			fmt = "XRA	L";
 			break;
 		case 0xaf: // 10101111
-			printf("XRA	A");
+			fmt = "XRA	A";
 			break;
 		case 0xae: // 10101110
 			/*
@@ -805,7 +806,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				flags: Z,S,P,CY,AC
 				note: The CY and AC flags are cleared.
 			*/
-			printf("XRA	M");
+			fmt = "XRA	M";
 			break;
 		case 0xee: // 11101110
 			/*
@@ -816,7 +817,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				flags: Z,S,P,CY,AC
 				note: The CY and AC flags are cleared.
 			*/
-			printf("XRI	#0x%02x", code[1]);
+			fmt = "XRI	#0x%02x";
 			opbytes = 2;
 			break;
 		case 0xb0: // 10110000
@@ -828,25 +829,25 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				flags: Z,S,P,CY,AC
 				note: The CY and AC flags are cleared.
 			*/
-			printf("ORA	B");
+			fmt = "ORA	B";
 			break;
 		case 0xb1: // 10110001
-			printf("ORA	C");
+			fmt = "ORA	C";
 			break;
 		case 0xb2: // 10110010
-			printf("ORA	D");
+			fmt = "ORA	D";
 			break;
 		case 0xb3: // 10110011
-			printf("ORA	E");
+			fmt = "ORA	E";
 			break;
 		case 0xb4: // 10110100
-			printf("ORA	H");
+			fmt = "ORA	H";
 			break;
 		case 0xb5: // 10110101
-			printf("ORA	L");
+			fmt = "ORA	L";
 			break;
 		case 0xb7: // 10110111
-			printf("ORA	A");
+			fmt = "ORA	A";
 			break;
 		case 0xb6: // 10110110
 			/*
@@ -857,7 +858,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				flags: Z,S,P,CY,AC
 				note: The CY and AC flags are cleared.
 			*/
-			printf("ORA	M");
+			fmt = "ORA	M";
 			break;
 		case 0xf6: // 11110110
 			/*
@@ -868,7 +869,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				flags: Z,S,P,CY,AC
 				note: The CY and AC flags are cleared.
 			*/
-			printf("ORI	#0x%02x", code[1]);
+			fmt = "ORI	#0x%02x";
 			opbytes = 2;
 			break;
 		case 0xb8: // 10111000
@@ -880,25 +881,25 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				flags: Z,S,P,CY,AC
 				note: The Z flag is set to 1 if (A) = (r). The CY flag is set to 1 if (A) < (r).
 			*/
-			printf("CMP	B");
+			fmt = "CMP	B";
 			break;
 		case 0xb9: // 10111001
-			printf("CMP	C");
+			fmt = "CMP	C";
 			break;
 		case 0xba: // 10111010
-			printf("CMP	D");
+			fmt = "CMP	D";
 			break;
 		case 0xbb: // 10111011
-			printf("CMP	E");
+			fmt = "CMP	E";
 			break;
 		case 0xbc: // 10111100
-			printf("CMP	H");
+			fmt = "CMP	H";
 			break;
 		case 0xbd: // 10111101
-			printf("CMP	L");
+			fmt = "CMP	L";
 			break;
 		case 0xbf: // 10111111
-			printf("CMP	A");
+			fmt = "CMP	A";
 			break;
 		case 0xbe: // 10111110
 			/*
@@ -909,7 +910,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				flags: Z,S,P,CY,AC
 				note: The Z flag is set to 1 if (A) = ((H)(L)). The CY flag is set to 1 if (A) < ((H)(L)).
 			*/
-			printf("CMP	M");
+			fmt = "CMP	M";
 			break;
 		case 0xfe: // 11111110
 			/*
@@ -920,7 +921,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				flags: Z,S,P,CY,AC
 				note: The Z flag is set to 1 if (A) = (byte2). The CY flag is set to 1 if (A) < (byte2).
 			*/
-			printf("CPI	#0x%02x", code[1]);
+			fmt = "CPI	#0x%02x";
 			opbytes = 2;
 			break;
 		case 0x07: // 00000111
@@ -932,7 +933,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: CY
 			*/
-			printf("RLC");
+			fmt = "RLC";
 			break;
 		case 0x0f: // 00001111
 			/*
@@ -943,7 +944,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: CY
 			*/
-			printf("RRC");
+			fmt = "RRC";
 			break;
 		case 0x17: // 00010111
 			/*
@@ -954,7 +955,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: CY
 			*/
-			printf("RAL");
+			fmt = "RAL";
 			break;
 		case 0x1f: // 00011111
 			/*
@@ -965,7 +966,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				
 				flags: CY
 			*/
-			printf("RAR");
+			fmt = "RAR";
 			break;
 		case 0x2f: // 00101111
 			/*
@@ -973,7 +974,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				CMA
 					(A) <- (_A_)
 			*/
-			printf("CMA");
+			fmt = "CMA";
 			break;
 		case 0x3f: // 00111111
 			/*
@@ -981,7 +982,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				CMC
 					(CY) <- (_CY_)
 			*/
-			printf("CMC");
+			fmt = "CMC";
 			break;
 		case 0x37: // 00110111
 			/*
@@ -989,7 +990,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				STC
 					(CY) <- 1
 			*/
-			printf("STC");
+			fmt = "STC";
 			break;
 		case 0xc3: // 11000011
 			/*
@@ -997,7 +998,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				JMP addr
 					(PC) <- (byte3)(byte2)
 			*/
-			printf("JMP	$%02x%02x", code[2], code[1]);
+			fmt = "JMP	$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0xc2: // 11000010
@@ -1006,35 +1007,35 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				Jcondition addr
 					If (CCC), (PC) <- (byte3)(byte2)
 			*/
-			printf("JNZ	$%02x%02x", code[2], code[1]);
+			fmt = "JNZ	$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0xca: // 11001010
-			printf("JZ	$%02x%02x", code[2], code[1]);
+			fmt = "JZ	$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0xd2: // 11010010
-			printf("JNC	$%02x%02x", code[2], code[1]);
+			fmt = "JNC	$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0xda: // 11011010
-			printf("JC	$%02x%02x", code[2], code[1]);
+			fmt = "JC	$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0xe2: // 11100010
-			printf("JPO	$%02x%02x", code[2], code[1]);
+			fmt = "JPO	$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0xea: // 11101010
-			printf("JPE	$%02x%02x", code[2], code[1]);
+			fmt = "JPE	$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0xf2: // 11110010
-			printf("JP	$%02x%02x", code[2], code[1]);
+			fmt = "JP	$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0xfa: // 11111010
-			printf("JM	$%02x%02x", code[2], code[1]);
+			fmt = "JM	$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0xcd: // 11001101
@@ -1046,7 +1047,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 					(SP) <- (SP) - 2
 					(PC) <- (byte3)(byte2)
 			*/
-			printf("CALL	$%02x%02x", code[2], code[1]);
+			fmt = "CALL	$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0xc4: // 11000100
@@ -1059,35 +1060,35 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 					(SP) <- (SP) - 2
 					(PC) <- (byte3)(byte2)
 			*/
-			printf("CNZ	$%02x%02x", code[2], code[1]);
+			fmt = "CNZ	$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0xcc: // 11001100
-			printf("CZ	$%02x%02x", code[2], code[1]);
+			fmt = "CZ	$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0xd4: // 11010100
-			printf("CNC	$%02x%02x", code[2], code[1]);
+			fmt = "CNC	$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0xdc: // 11011100
-			printf("CC	$%02x%02x", code[2], code[1]);
+			fmt = "CC	$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0xe4: // 11100100
-			printf("CPO	$%02x%02x", code[2], code[1]);
+			fmt = "CPO	$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0xec: // 11101100
-			printf("CPE	$%02x%02x", code[2], code[1]);
+			fmt = "CPE	$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0xf4: // 11110100
-			printf("CP	$%02x%02x", code[2], code[1]);
+			fmt = "CP	$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0xfc: // 11111100
-			printf("CM	$%02x%02x", code[2], code[1]);
+			fmt = "CM	$%02x%02x";
 			opbytes = 3;
 			break;
 		case 0xc9: // 11001001
@@ -1098,7 +1099,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 					(PCH) <- ((SP) + 1)
 					(SP) <- (SP) + 2
 			*/
-			printf("RET");
+			fmt = "RET";
 			break;
 		case 0xc0: // 11000000
 			/*
@@ -1109,28 +1110,28 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 					(PCH) <- ((SP) + 1)
 					(SP) <- (SP) + 2
 			*/
-			printf("RNZ");
+			fmt = "RNZ";
 			break;
 		case 0xc8: // 11001000
-			printf("RZ");
+			fmt = "RZ";
 			break;
 		case 0xd0: // 11010000
-			printf("RNC");
+			fmt = "RNC";
 			break;
 		case 0xd8: // 11011000
-			printf("RC");
+			fmt = "RC";
 			break;
 		case 0xe0: // 11100000
-			printf("RPO");
+			fmt = "RPO";
 			break;
 		case 0xe8: // 11101000
-			printf("RPE");
+			fmt = "RPE";
 			break;
 		case 0xf0: // 11110000
-			printf("RP");
+			fmt = "RP";
 			break;
 		case 0xf8: // 11111000
-			printf("RM");
+			fmt = "RM";
 			break;
 		case 0xc7: // 11000111
 			/*
@@ -1141,28 +1142,28 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 					(SP) <- (SP) - 2
 					(PC) <- 8*(NNN)
 			*/
-			printf("RST	0");
+			fmt = "RST	0";
 			break;
 		case 0xcf: // 11001111
-			printf("RST	1");
+			fmt = "RST	1";
 			break;
 		case 0xd7: // 11010111
-			printf("RST	2");
+			fmt = "RST	2";
 			break;
 		case 0xdf: // 11011111
-			printf("RST	3");
+			fmt = "RST	3";
 			break;
 		case 0xe7: // 11100111
-			printf("RST	4");
+			fmt = "RST	4";
 			break;
 		case 0xef: // 11101111
-			printf("RST	5");
+			fmt = "RST	5";
 			break;
 		case 0xf7: // 11110111
-			printf("RST	6");
+			fmt = "RST	6";
 			break;
 		case 0xff: // 11111111
-			printf("RST	7");
+			fmt = "RST	7";
 			break;
 		case 0xe9: // 11101001
 			/*
@@ -1171,7 +1172,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 					(PCH) <- (H)
 					(PCL) <- (L)
 			*/
-			printf("PCHL");
+			fmt = "PCHL";
 			break;
 		case 0xc5: // 11000101
 			/*
@@ -1182,13 +1183,13 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 					(SP) <- (SP) - 2
 				note: Register pair rp = SP may not be specified.
 			*/
-			printf("PUSH	B");
+			fmt = "PUSH	B";
 			break;
 		case 0xd5: // 11010101
-			printf("PUSH	D");
+			fmt = "PUSH	D";
 			break;
 		case 0xe5: // 11100101
-			printf("PUSH	H");
+			fmt = "PUSH	H";
 			break;
 		case 0xf5: // 11110101
 			/*
@@ -1201,7 +1202,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 					((SP) - 2)[6] <- (Z), ((SP) - 2)[7] <- (S)
 					(SP) <- (SP) - 2
 			*/
-			printf("PUSH	PSW");
+			fmt = "PUSH	PSW";
 			break;
 		case 0xc1: // 11000001
 			/*
@@ -1212,13 +1213,13 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 					(SP) <- (SP) + 2
 				note: Register pair rp = SP may not be specified.
 			*/
-			printf("POP	B");
+			fmt = "POP	B";
 			break;
 		case 0xd1: // 11010001
-			printf("POP	D");
+			fmt = "POP	D";
 			break;
 		case 0xe1: // 11100001
-			printf("POP	H");
+			fmt = "POP	H";
 			break;
 		case 0xf1: // 11110001
 			/*
@@ -1232,7 +1233,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 					(A) <- ((SP) + 1)
 					(SP) <- (SP) + 2
 			*/
-			printf("POP    PSW");
+			fmt = "POP	PSW";
 			break;
 		case 0xe3: // 11100011
 			/*
@@ -1241,7 +1242,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 					(L) <-> ((SP))
 					(H) <-> ((SP) + 1)
 			*/
-			printf("XTHL");
+			fmt = "XTHL";
 			break;
 		case 0xf9: // 11111001
 			/*
@@ -1249,7 +1250,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				SPHL
 					(SP) <- (H)(L)
 			*/
-			printf("SPHL");
+			fmt = "SPHL";
 			break;
 		case 0xdb: // 11011011
 			/*
@@ -1257,7 +1258,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				IN port
 					(A) <- (data)
 			*/
-			printf("IN	#0x%02x", code[1]);
+			fmt = "IN	#0x%02x";
 			opbytes = 2;
 			break;
 		case 0xd3: // 11010011
@@ -1266,7 +1267,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				OUT port
 					(data) <- (A)
 			*/
-			printf("OUT	#0x%02x", code[1]);
+			fmt = "OUT	#0x%02x";
 			opbytes = 2;
 			break;
 		case 0xfb: // 11111011
@@ -1275,7 +1276,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				EI
 				note: The interrupt system is enabled following the execution of the next instruction.
 			*/
-			printf("EI");
+			fmt = "EI";
 			break;
 		case 0xf3: // 11110011
 			/*
@@ -1283,7 +1284,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				DI
 				note: The interrupt system is disabled immediately following the execution of the DI instruction.
 			*/
-			printf("DI");
+			fmt = "DI";
 			break;
 		case 0x76: // 01110110
 			/*
@@ -1291,7 +1292,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				HLT
 				note: The processor is stopped. The registers and flags are unnafected.
 			*/
-			printf("HLT");
+			fmt = "HLT";
 			break;
 		case 0x00: // 00000000
 			/*
@@ -1299,7 +1300,7 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 				NOP
 				note: No operation is performed. The registers and flags are unnafected.
 			*/
-			printf("NOP");
+			fmt = "NOP";
 			break;
 		case 0x08: // 00001000
 		case 0x10: // 00010000
@@ -1312,8 +1313,24 @@ int e8080_dissasemble_opcode(unsigned char *codebuffer, int pc)
 		case 0xd9: // 11011001
 		case 0xdd: // 11011101
 		case 0xed: // 11101101
-		case 0xfd: // 11111101		
+		case 0xfd: // 11111101
 		default:
+			fmt = "ERROR";
+			break;
+	}
+	switch (opbytes)
+	{
+		case 1:
+			printf("%02x      \t\t", code[0]);
+			printf(fmt);
+			break;
+		case 2:
+			printf("%02x %02x   \t\t", code[0], code[1]);
+			printf(fmt, code[1]);
+			break;
+		case 3:
+			printf("%02x %02x %02x\t\t", code[0], code[1], code[2]);
+			printf(fmt, code[2], code[1]);
 			break;
 	}
 	printf("\n");
