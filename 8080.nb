@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       161,          7]
-NotebookDataLength[    193115,       4227]
-NotebookOptionsPosition[    191259,       4189]
-NotebookOutlinePosition[    191625,       4205]
-CellTagsIndexPosition[    191582,       4202]
+NotebookDataLength[    190110,       4147]
+NotebookOptionsPosition[    188255,       4109]
+NotebookOutlinePosition[    188621,       4125]
+CellTagsIndexPosition[    188578,       4122]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -473,7 +473,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.785432861534849*^9, 3.785432931945039*^9}, {
   3.78543301686198*^9, 3.785433044858302*^9}},
  Background->GrayLevel[0.85],
- CellLabel->"In[15]:=",ExpressionUUID->"cdb41e9b-91e2-4c62-bfcd-22d0c63c67f5"],
+ CellLabel->"In[1]:=",ExpressionUUID->"cdb41e9b-91e2-4c62-bfcd-22d0c63c67f5"],
 
 Cell[BoxData[{
  RowBox[{
@@ -498,7 +498,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.785432861534849*^9, 3.785432931945039*^9}, {
   3.78543301686198*^9, 3.785433086575696*^9}},
  Background->GrayLevel[0.85],
- CellLabel->"In[24]:=",ExpressionUUID->"3a196786-83bf-44af-b936-a12e21cdc1d6"],
+ CellLabel->"In[10]:=",ExpressionUUID->"3a196786-83bf-44af-b936-a12e21cdc1d6"],
 
 Cell[BoxData[{
  RowBox[{
@@ -540,8 +540,7 @@ Cell[BoxData[{
   3.78543301686198*^9, 3.785433086575696*^9}, {3.78544924874284*^9, 
   3.785449309312151*^9}},
  Background->GrayLevel[0.85],
- CellLabel->
-  "In[2168]:=",ExpressionUUID->"d0f225eb-44fd-4a6e-a097-5b64091d9d86"],
+ CellLabel->"In[15]:=",ExpressionUUID->"d0f225eb-44fd-4a6e-a097-5b64091d9d86"],
 
 Cell[CellGroupData[{
 
@@ -3199,8 +3198,7 @@ unnafected.\>\""}], ",", "\[IndentingNewLine]",
    3.785453019977911*^9, 3.785453127087655*^9}, {3.785453171348413*^9, 
    3.785453180911268*^9}},
  Background->GrayLevel[0.85],
- CellLabel->
-  "In[3818]:=",ExpressionUUID->"83d568c8-fa63-45ad-b753-ae44920f4ad6"],
+ CellLabel->"In[24]:=",ExpressionUUID->"83d568c8-fa63-45ad-b753-ae44920f4ad6"],
 
 Cell[CellGroupData[{
 
@@ -3385,7 +3383,7 @@ Cell[BoxData[
                     RowBox[{"instr", "[", "\"\<function\>\"", "]"}], ",", 
                     RowBox[{"{", 
                     RowBox[{
-                    "\"\<\\t\>\"", ",", "\"\<\\n\\t\\t\\t\\t\\t\\t\>\"", ",", 
+                    "\"\<\\t\>\"", ",", "\"\<\\n\\t\\t\\t\\t\\t\>\"", ",", 
                     "\"\<\>\""}], "}"}]}], "]"}], ",", "Nothing"}], "]"}], 
                     ",", "\[IndentingNewLine]", 
                     RowBox[{"If", "[", 
@@ -3394,7 +3392,7 @@ Cell[BoxData[
                     RowBox[{"MissingQ", "[", 
                     RowBox[{"instr", "[", "\"\<flags\>\"", "]"}], "]"}]}], 
                     ",", 
-                    RowBox[{"\"\<\\n\\t\\t\\t\\t\\tflags: \>\"", "<>", 
+                    RowBox[{"\"\<\\n\\t\\t\\t\\tflags: \>\"", "<>", 
                     RowBox[{"StringRiffle", "[", 
                     RowBox[{
                     RowBox[{"instr", "[", "\"\<flags\>\"", "]"}], ",", 
@@ -3410,11 +3408,11 @@ Cell[BoxData[
                     "Nothing"}], "]"}]}], "\[IndentingNewLine]", "}"}], ",", 
                     RowBox[{"{", 
                     RowBox[{
-                    "\"\<\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t\>\"", ",", 
-                    "\"\<\\n\\t\\t\\t\\t\\t\>\"", ",", 
-                    "\"\<\\n\\t\\t\\t\\t*/\>\""}], "}"}]}], "]"}], 
+                    "\"\<\\n\\t\\t\\t/*\\n\\t\\t\\t\\t\>\"", ",", 
+                    "\"\<\\n\\t\\t\\t\\t\>\"", ",", 
+                    "\"\<\\n\\t\\t\\t*/\>\""}], "}"}]}], "]"}], 
                     "\[IndentingNewLine]", ",", "Nothing"}], "]"}], ",", 
-                  "\[IndentingNewLine]", "\"\<\\n\\t\\t\\t\\t\>\"", ",", 
+                  "\[IndentingNewLine]", "\"\<\\n\\t\\t\\t\>\"", ",", 
                   RowBox[{"instr", "[", "\"\<print\>\"", "]"}], ",", 
                   "\[IndentingNewLine]", 
                   RowBox[{"If", "[", 
@@ -3425,16 +3423,16 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{
                     "StringTemplate", "[", 
-                    "\"\<\\n\\t\\t\\t\\topbytes = `1`;\>\"", "]"}], "[", 
+                    "\"\<\\n\\t\\t\\topbytes = `1`;\>\"", "]"}], "[", 
                     RowBox[{"instr", "[", "\"\<size\>\"", "]"}], "]"}]}], 
-                   "]"}], ",", "\[IndentingNewLine]", 
-                  "\"\<\\n\\t\\t\\t\\t\>\"", ",", "\[IndentingNewLine]", 
-                  "\"\<break;\>\""}], "\[IndentingNewLine]", "}"}], "]"}]}], 
-              "}"}]}], "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
-          "]"}]}], "\[IndentingNewLine]", "]"}], "&"}], "/@", 
+                   "]"}], ",", "\[IndentingNewLine]", "\"\<\\n\\t\\t\\t\>\"", 
+                  ",", "\[IndentingNewLine]", "\"\<break;\>\""}], 
+                 "\[IndentingNewLine]", "}"}], "]"}]}], "}"}]}], 
+            "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
+        "\[IndentingNewLine]", "]"}], "&"}], "/@", 
       RowBox[{"Range", "[", 
        RowBox[{"0", ",", "255"}], "]"}]}], ",", "First"}], "]"}], "//", 
-   "Reverse"}], "//", 
+   "Identity"}], "//", 
   RowBox[{
    RowBox[{"StringRiffle", "[", 
     RowBox[{
@@ -3483,671 +3481,592 @@ Cell[BoxData[
    3.785449859116168*^9, 3.785449859838551*^9}, {3.785450000570189*^9, 
    3.7854500014309893`*^9}, {3.785450206097472*^9, 3.785450206964916*^9}, {
    3.785450348995715*^9, 3.785450349629093*^9}, {3.785450581683483*^9, 
-   3.78545058252282*^9}, {3.785450676413571*^9, 3.785450679334429*^9}},
+   3.78545058252282*^9}, {3.785450676413571*^9, 3.785450679334429*^9}, {
+   3.785453243759461*^9, 3.785453244556673*^9}, {3.785453381836125*^9, 
+   3.785453422988701*^9}, {3.785453466364698*^9, 3.785453466950646*^9}},
  Background->RGBColor[0.94, 0.91, 0.88],
  CellLabel->
-  "In[3892]:=",ExpressionUUID->"1c9324da-1d6d-4a12-a862-1463a88cad52"],
+  "In[102]:=",ExpressionUUID->"1c9324da-1d6d-4a12-a862-1463a88cad52"],
 
-Cell[BoxData["\<\"\\t\\tcase 0xfd: // 11111101\\n\\t\\tcase 0xed: // 11101101\
-\\n\\t\\tcase 0xdd: // 11011101\\n\\t\\tcase 0xd9: // 11011001\\n\\t\\tcase \
-0xcb: // 11001011\\n\\t\\tcase 0x38: // 00111000\\n\\t\\tcase 0x30: // \
-00110000\\n\\t\\tcase 0x28: // 00101000\\n\\t\\tcase 0x20: // \
-00100000\\n\\t\\tcase 0x18: // 00011000\\n\\t\\tcase 0x10: // \
-00010000\\n\\t\\tcase 0x08: // 00001000\\n\\t\\tcase 0x00: // \
-00000000\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<No op>\\n\\t\\t\\t\\t\\tNOP\\n\\t\
-\\t\\t\\t\\tnote: No operation is performed. The registers and flags are \
-unnafected.\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"NOP\\\");\\n\\t\\t\\t\\\
-tbreak;\\n\\t\\tcase 0x76: // \
-01110110\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Halt>\\n\\t\\t\\t\\t\\tHLT\\n\\t\\\
-t\\t\\t\\tnote: The processor is stopped. The registers and flags are \
-unnafected.\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"HLT\\\");\\n\\t\\t\\t\\\
-tbreak;\\n\\t\\tcase 0xf3: // \
-11110011\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Disable \
-interrupts>\\n\\t\\t\\t\\t\\tDI\\n\\t\\t\\t\\t\\tnote: The interrupt system \
-is disabled immediately following the execution of the DI \
-instruction.\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"DI\\\");\\n\\t\\t\\t\\\
-tbreak;\\n\\t\\tcase 0xfb: // \
-11111011\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Enable interrupts>\\n\\t\\t\\t\\t\
-\\tEI\\n\\t\\t\\t\\t\\tnote: The interrupt system is enabled following the \
-execution of the next \
-instruction.\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"EI\\\");\\n\\t\\t\\t\\\
-tbreak;\\n\\t\\tcase 0xd3: // \
-11010011\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Output>\\n\\t\\t\\t\\t\\tOUT port\
-\\n\\t\\t\\t\\t\\t\\t(data) <- \
-(A)\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"OUT    #0x%02x\\\", \
-code[1]);\\n\\t\\t\\t\\topbytes = 2;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xdb: \
-// 11011011\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Input>\\n\\t\\t\\t\\t\\tIN \
-port\\n\\t\\t\\t\\t\\t\\t(A) <- (data)\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\
-\\\"IN     #0x%02x\\\", code[1]);\\n\\t\\t\\t\\topbytes = \
-2;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xf9: // 11111001\\n\\t\\t\\t\\t/*\\n\\t\
-\\t\\t\\t\\t<Move HL to SP>\\n\\t\\t\\t\\t\\tSPHL\\n\\t\\t\\t\\t\\t\\t(SP) <- \
-(H)(L)\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"SPHL\\\");\\n\\t\\t\\t\\\
-tbreak;\\n\\t\\tcase 0xe3: // \
-11100011\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Exchange stack top with H and \
-L>\\n\\t\\t\\t\\t\\tXTHL\\n\\t\\t\\t\\t\\t\\t(L) <-> ((SP))\\n\\t\\t\\t\\t\\t\
-\\t(H) <-> ((SP) + 1)\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"XTHL\\\");\\n\
-\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xf1: // \
-11110001\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Pop processor status \
-word>\\n\\t\\t\\t\\t\\tPOP PSW\\n\\t\\t\\t\\t\\t\\t(CY) <- ((SP))[0]\\n\\t\\t\
-\\t\\t\\t\\t(P) <- ((SP))[2]\\n\\t\\t\\t\\t\\t\\t(AC) <- \
-((SP))[4]\\n\\t\\t\\t\\t\\t\\t(Z) <- ((SP))[6]\\n\\t\\t\\t\\t\\t\\t(S) <- \
-((SP))[7]\\n\\t\\t\\t\\t\\t\\t(A) <- ((SP) + 1)\\n\\t\\t\\t\\t\\t\\t(SP) <- \
-(SP) + 2\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"POP    \
-PSW\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xe1: // \
-11100001\\n\\t\\t\\t\\tprintf(\\\"POP    \
-H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xd1: // \
-11010001\\n\\t\\t\\t\\tprintf(\\\"POP    \
-D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xc1: // \
-11000001\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Pop>\\n\\t\\t\\t\\t\\tPOP \
-rp\\n\\t\\t\\t\\t\\t\\t(rh) <- ((SP) + 1)\\n\\t\\t\\t\\t\\t\\t(rl) <- ((SP) + \
-2)\\n\\t\\t\\t\\t\\t\\t(SP) <- (SP) + 2\\n\\t\\t\\t\\t\\tnote: Register pair \
-rp = SP may not be specified.\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"POP   \
- B\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xf5: // 11110101\\n\\t\\t\\t\\t/*\
-\\n\\t\\t\\t\\t\\t<Push processor status word>\\n\\t\\t\\t\\t\\tPUSH \
-PSW\\n\\t\\t\\t\\t\\t\\t((SP) - 1) <- (A)\\n\\t\\t\\t\\t\\t\\t((SP) - 2)[0] \
-<- (CY), ((SP) - 2)[1] <- 1\\n\\t\\t\\t\\t\\t\\t((SP) - 2)[2] <- (P), ((SP) - \
-2)[3] <- 0\\n\\t\\t\\t\\t\\t\\t((SP) - 2)[4] <- (AC), ((SP) - 2)[5] <- \
-0\\n\\t\\t\\t\\t\\t\\t((SP) - 2)[6] <- (Z), ((SP) - 2)[7] <- \
-(S)\\n\\t\\t\\t\\t\\t\\t(SP) <- (SP) - \
-2\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"PUSH   \
-PSW\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xe5: // \
-11100101\\n\\t\\t\\t\\tprintf(\\\"PUSH   \
-H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xd5: // \
-11010101\\n\\t\\t\\t\\tprintf(\\\"PUSH   \
-D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xc5: // \
-11000101\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Push>\\n\\t\\t\\t\\t\\tPUSH rp\\n\
-\\t\\t\\t\\t\\t\\t((SP) - 1) <- (rh)\\n\\t\\t\\t\\t\\t\\t((SP) - 2) <- \
-(rl)\\n\\t\\t\\t\\t\\t\\t(SP) <- (SP) - 2\\n\\t\\t\\t\\t\\tnote: Register \
-pair rp = SP may not be \
-specified.\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"PUSH   \
-B\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xe9: // \
-11101001\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Jump H and L indirect - move H \
-and L to PC>\\n\\t\\t\\t\\t\\tPCHL\\n\\t\\t\\t\\t\\t\\t(PCH) <- \
-(H)\\n\\t\\t\\t\\t\\t\\t(PCL) <- (L)\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\
-\"PCHL\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xff: // \
-11111111\\n\\t\\t\\t\\tprintf(\\\"RST    \
-7\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xf7: // \
-11110111\\n\\t\\t\\t\\tprintf(\\\"RST    \
-6\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xef: // \
-11101111\\n\\t\\t\\t\\tprintf(\\\"RST    \
-5\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xe7: // \
-11100111\\n\\t\\t\\t\\tprintf(\\\"RST    \
-4\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xdf: // \
-11011111\\n\\t\\t\\t\\tprintf(\\\"RST    \
-3\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xd7: // \
-11010111\\n\\t\\t\\t\\tprintf(\\\"RST    \
-2\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xcf: // \
-11001111\\n\\t\\t\\t\\tprintf(\\\"RST    \
-1\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xc7: // \
-11000111\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Restart>\\n\\t\\t\\t\\t\\tRST \
-n\\n\\t\\t\\t\\t\\t\\t((SP) - 1) <- (PCH)\\n\\t\\t\\t\\t\\t\\t((SP) - 2) <- \
-(PCL)\\n\\t\\t\\t\\t\\t\\t(SP) <- (SP) - 2\\n\\t\\t\\t\\t\\t\\t(PC) <- \
-8*(NNN)\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"RST    \
-0\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xf8: // \
-11111000\\n\\t\\t\\t\\tprintf(\\\"RM\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase \
-0xf0: // 11110000\\n\\t\\t\\t\\tprintf(\\\"RP\\\");\\n\\t\\t\\t\\tbreak;\\n\\\
-t\\tcase 0xe8: // \
-11101000\\n\\t\\t\\t\\tprintf(\\\"RPE\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase \
-0xe0: // 11100000\\n\\t\\t\\t\\tprintf(\\\"RPO\\\");\\n\\t\\t\\t\\tbreak;\\n\\\
-t\\tcase 0xd8: // \
-11011000\\n\\t\\t\\t\\tprintf(\\\"RC\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase \
-0xd0: // 11010000\\n\\t\\t\\t\\tprintf(\\\"RNC\\\");\\n\\t\\t\\t\\tbreak;\\n\\\
-t\\tcase 0xc8: // \
-11001000\\n\\t\\t\\t\\tprintf(\\\"RZ\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase \
-0xc0: // 11000000\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Conditional \
-return>\\n\\t\\t\\t\\t\\tRcondition\\n\\t\\t\\t\\t\\t\\tIf (CCC), \
-\\n\\t\\t\\t\\t\\t\\t(PCL) <- ((SP))\\n\\t\\t\\t\\t\\t\\t(PCH) <- ((SP) + \
-1)\\n\\t\\t\\t\\t\\t\\t(SP) <- (SP) + \
-2\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"RNZ\\\");\\n\\t\\t\\t\\tbreak;\\n\
-\\t\\tcase 0xc9: // 11001001\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Return>\\n\\t\
-\\t\\t\\t\\tRET\\n\\t\\t\\t\\t\\t\\t(PCL) <- ((SP))\\n\\t\\t\\t\\t\\t\\t(PCH) \
-<- ((SP) + 1)\\n\\t\\t\\t\\t\\t\\t(SP) <- (SP) + \
-2\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"RET\\\");\\n\\t\\t\\t\\tbreak;\\n\
-\\t\\tcase 0xfc: // 11111100\\n\\t\\t\\t\\tprintf(\\\"CM    $%02x%02x\\\", \
-code[2], code[1]);\\n\\t\\t\\t\\topbytes = \
-3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xf4: // \
-11110100\\n\\t\\t\\t\\tprintf(\\\"CP    $%02x%02x\\\", code[2], \
-code[1]);\\n\\t\\t\\t\\topbytes = 3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xec: \
-// 11101100\\n\\t\\t\\t\\tprintf(\\\"CPE    $%02x%02x\\\", code[2], code[1]);\
-\\n\\t\\t\\t\\topbytes = 3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xe4: // \
-11100100\\n\\t\\t\\t\\tprintf(\\\"CPO    $%02x%02x\\\", code[2], code[1]);\\n\
-\\t\\t\\t\\topbytes = 3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xdc: // \
-11011100\\n\\t\\t\\t\\tprintf(\\\"CC    $%02x%02x\\\", code[2], \
-code[1]);\\n\\t\\t\\t\\topbytes = 3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xd4: \
-// 11010100\\n\\t\\t\\t\\tprintf(\\\"CNC    $%02x%02x\\\", code[2], code[1]);\
-\\n\\t\\t\\t\\topbytes = 3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xcc: // \
-11001100\\n\\t\\t\\t\\tprintf(\\\"CZ    $%02x%02x\\\", code[2], \
-code[1]);\\n\\t\\t\\t\\topbytes = 3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xc4: \
-// 11000100\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Conditional \
-call>\\n\\t\\t\\t\\t\\tCcondition addr\\n\\t\\t\\t\\t\\t\\tIf (CCC), \
-\\n\\t\\t\\t\\t\\t\\t((SP) - 1) <- (PCH)\\n\\t\\t\\t\\t\\t\\t((SP) - 2) <- \
-(PCL)\\n\\t\\t\\t\\t\\t\\t(SP) <- (SP) - 2\\n\\t\\t\\t\\t\\t\\t(PC) <- \
-(byte3)(byte2)\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"CNZ    \
-$%02x%02x\\\", code[2], code[1]);\\n\\t\\t\\t\\topbytes = \
-3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xcd: // 11001101\\n\\t\\t\\t\\t/*\\n\\t\
-\\t\\t\\t\\t<Call>\\n\\t\\t\\t\\t\\tCALL addr\\n\\t\\t\\t\\t\\t\\t((SP) - 1) \
-<- (PCH)\\n\\t\\t\\t\\t\\t\\t((SP) - 2) <- (PCL)\\n\\t\\t\\t\\t\\t\\t(SP) <- \
-(SP) - 2\\n\\t\\t\\t\\t\\t\\t(PC) <- (byte3)(byte2)\\n\\t\\t\\t\\t*/\\n\\t\\t\
-\\t\\tprintf(\\\"CALL   $%02x%02x\\\", code[2], \
-code[1]);\\n\\t\\t\\t\\topbytes = 3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xfa: \
-// 11111010\\n\\t\\t\\t\\tprintf(\\\"JM    $%02x%02x\\\", code[2], \
-code[1]);\\n\\t\\t\\t\\topbytes = 3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xf2: \
-// 11110010\\n\\t\\t\\t\\tprintf(\\\"JP    $%02x%02x\\\", code[2], \
-code[1]);\\n\\t\\t\\t\\topbytes = 3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xea: \
-// 11101010\\n\\t\\t\\t\\tprintf(\\\"JPE    $%02x%02x\\\", code[2], code[1]);\
-\\n\\t\\t\\t\\topbytes = 3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xe2: // \
-11100010\\n\\t\\t\\t\\tprintf(\\\"JPO    $%02x%02x\\\", code[2], code[1]);\\n\
-\\t\\t\\t\\topbytes = 3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xda: // \
-11011010\\n\\t\\t\\t\\tprintf(\\\"JC    $%02x%02x\\\", code[2], \
-code[1]);\\n\\t\\t\\t\\topbytes = 3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xd2: \
-// 11010010\\n\\t\\t\\t\\tprintf(\\\"JNC    $%02x%02x\\\", code[2], code[1]);\
-\\n\\t\\t\\t\\topbytes = 3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xca: // \
-11001010\\n\\t\\t\\t\\tprintf(\\\"JZ    $%02x%02x\\\", code[2], \
-code[1]);\\n\\t\\t\\t\\topbytes = 3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xc2: \
-// 11000010\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Conditional \
-jump>\\n\\t\\t\\t\\t\\tJcondition addr\\n\\t\\t\\t\\t\\t\\tIf (CCC), (PC) <- \
-(byte3)(byte2)\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"JNZ    \
-$%02x%02x\\\", code[2], code[1]);\\n\\t\\t\\t\\topbytes = \
-3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xc3: // 11000011\\n\\t\\t\\t\\t/*\\n\\t\
-\\t\\t\\t\\t<Jump>\\n\\t\\t\\t\\t\\tJMP addr\\n\\t\\t\\t\\t\\t\\t(PC) <- \
-(byte3)(byte2)\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"JMP    \
-$%02x%02x\\\", code[2], code[1]);\\n\\t\\t\\t\\topbytes = \
-3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x37: // 00110111\\n\\t\\t\\t\\t/*\\n\\t\
-\\t\\t\\t\\t<Set carry>\\n\\t\\t\\t\\t\\tSTC\\n\\t\\t\\t\\t\\t\\t(CY) <- 1\\n\
-\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"STC\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\\
-tcase 0x3f: // 00111111\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Complement \
-carry>\\n\\t\\t\\t\\t\\tCMC\\n\\t\\t\\t\\t\\t\\t(CY) <- \
-(_CY_)\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"CMC\\\");\\n\\t\\t\\t\\\
-tbreak;\\n\\t\\tcase 0x2f: // \
-00101111\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Complement \
-accumulator>\\n\\t\\t\\t\\t\\tCMA\\n\\t\\t\\t\\t\\t\\t(A) <- \
-(_A_)\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"CMA\\\");\\n\\t\\t\\t\\tbreak;\
-\\n\\t\\tcase 0x1f: // 00011111\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Rotate \
-right through carry>\\n\\t\\t\\t\\t\\tRAR\\n\\t\\t\\t\\t\\t\\t(A[n]) <- \
-(A[n+1]); (CY) <- (A[0])\\n\\t\\t\\t\\t\\t\\t(A[7]) <- (CY)\\n\\t\\t\\t\\t\\t\
-\\n\\t\\t\\t\\t\\tflags: \
-CY\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"RAR\\\");\\n\\t\\t\\t\\tbreak;\\\
-n\\t\\tcase 0x17: // 00010111\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Rotate left \
-through carry>\\n\\t\\t\\t\\t\\tRAL\\n\\t\\t\\t\\t\\t\\t(A[n+1]) <- (A[n]); \
-(CY) <- (A[7])\\n\\t\\t\\t\\t\\t\\t(A[0]) <- \
-(CY)\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: \
-CY\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"RAL\\\");\\n\\t\\t\\t\\tbreak;\\\
-n\\t\\tcase 0x0f: // 00001111\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Rotate \
-right>\\n\\t\\t\\t\\t\\tRRC\\n\\t\\t\\t\\t\\t\\t(A[n]) <- (A[n+1]); (A[7]) <- \
-(A[0])\\n\\t\\t\\t\\t\\t\\t(CY) <- \
-(A[0])\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: CY\\n\\t\\t\\t\\t*/\\n\\t\\t\
-\\t\\tprintf(\\\"RRC\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x07: // \
-00000111\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Rotate left>\\n\\t\\t\\t\\t\\tRLC\
-\\n\\t\\t\\t\\t\\t\\t(A[n+1]) <- (A[n]); (A[0]) <- \
-(A[7])\\n\\t\\t\\t\\t\\t\\t(CY) <- \
-(A[7])\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: CY\\n\\t\\t\\t\\t*/\\n\\t\\t\
-\\t\\tprintf(\\\"RLC\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xfe: // \
-11111110\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Compare immediate>\\n\\t\\t\\t\\t\
-\\tCPI data\\n\\t\\t\\t\\t\\t\\t(A) - \
-(byte2)\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: \
-Z,S,P,CY,AC\\n\\t\\t\\t\\t\\tnote: The Z flag is set to 1 if (A) = (byte2). \
-The CY flag is set to 1 if (A) < \
-(byte2).\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"CPI    #0x%02x\\\", \
-code[1]);\\n\\t\\t\\t\\topbytes = 2;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xbe: \
-// 10111110\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Compare memory>\\n\\t\\t\\t\\t\
-\\tCMP M\\n\\t\\t\\t\\t\\t\\t(A) - \
-((H)(L))\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: Z,S,P,CY,AC\\n\\t\\t\\t\\t\
-\\tnote: The Z flag is set to 1 if (A) = ((H)(L)). The CY flag is set to 1 if \
-(A) < ((H)(L)).\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"CMP    \
-M\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xbf: // \
-10111111\\n\\t\\t\\t\\tprintf(\\\"CMP    \
-A\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xbd: // \
-10111101\\n\\t\\t\\t\\tprintf(\\\"CMP    \
-L\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xbc: // \
-10111100\\n\\t\\t\\t\\tprintf(\\\"CMP    \
-H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xbb: // \
-10111011\\n\\t\\t\\t\\tprintf(\\\"CMP    \
-E\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xba: // \
-10111010\\n\\t\\t\\t\\tprintf(\\\"CMP    \
-D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xb9: // \
-10111001\\n\\t\\t\\t\\tprintf(\\\"CMP    \
-C\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xb8: // \
-10111000\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Compare \
-register>\\n\\t\\t\\t\\t\\tCMP r\\n\\t\\t\\t\\t\\t\\t(A) - (r)\\n\\t\\t\\t\\t\
-\\t\\n\\t\\t\\t\\t\\tflags: Z,S,P,CY,AC\\n\\t\\t\\t\\t\\tnote: The Z flag is \
-set to 1 if (A) = (r). The CY flag is set to 1 if (A) < (r).\\n\\t\\t\\t\\t*/\
-\\n\\t\\t\\t\\tprintf(\\\"CMP    B\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase \
-0xf6: // 11110110\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<OR \
-immediate>\\n\\t\\t\\t\\t\\tORI data\\n\\t\\t\\t\\t\\t\\t(A) <- (A) OR \
-(byte2)\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: \
-Z,S,P,CY,AC\\n\\t\\t\\t\\t\\tnote: The CY and AC flags are \
-cleared.\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"ORI    #0x%02x\\\", \
-code[1]);\\n\\t\\t\\t\\topbytes = 2;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xb6: \
-// 10110110\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<OR \
-memory>\\n\\t\\t\\t\\t\\tORA M\\n\\t\\t\\t\\t\\t\\t(A) <- (A) OR \
-((H)(L))\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: Z,S,P,CY,AC\\n\\t\\t\\t\\t\
-\\tnote: The CY and AC flags are \
-cleared.\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"ORA    M\\\");\\n\\t\\t\\t\
-\\tbreak;\\n\\t\\tcase 0xb7: // 10110111\\n\\t\\t\\t\\tprintf(\\\"ORA    \
-A\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xb5: // \
-10110101\\n\\t\\t\\t\\tprintf(\\\"ORA    \
-L\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xb4: // \
-10110100\\n\\t\\t\\t\\tprintf(\\\"ORA    \
-H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xb3: // \
-10110011\\n\\t\\t\\t\\tprintf(\\\"ORA    \
-E\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xb2: // \
-10110010\\n\\t\\t\\t\\tprintf(\\\"ORA    \
-D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xb1: // \
-10110001\\n\\t\\t\\t\\tprintf(\\\"ORA    \
-C\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xb0: // \
-10110000\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<OR register>\\n\\t\\t\\t\\t\\tORA \
-r\\n\\t\\t\\t\\t\\t\\t(A) <- (A) OR \
-(r)\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: \
-Z,S,P,CY,AC\\n\\t\\t\\t\\t\\tnote: The CY and AC flags are \
-cleared.\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"ORA    B\\\");\\n\\t\\t\\t\
-\\tbreak;\\n\\t\\tcase 0xee: // \
-11101110\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Exclusive OR \
-immediate>\\n\\t\\t\\t\\t\\tXRI data\\n\\t\\t\\t\\t\\t\\t(A) <- (A) XOR \
-(byte2)\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: \
-Z,S,P,CY,AC\\n\\t\\t\\t\\t\\tnote: The CY and AC flags are \
-cleared.\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"XRI    #0x%02x\\\", \
-code[1]);\\n\\t\\t\\t\\topbytes = 2;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xae: \
-// 10101110\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Exclusive OR \
-memory>\\n\\t\\t\\t\\t\\tXRA M\\n\\t\\t\\t\\t\\t\\t(A) <- (A) XOR ((H)(L))\\n\
-\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: Z,S,P,CY,AC\\n\\t\\t\\t\\t\\tnote: \
-The CY and AC flags are \
-cleared.\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"XRA    M\\\");\\n\\t\\t\\t\
-\\tbreak;\\n\\t\\tcase 0xaf: // 10101111\\n\\t\\t\\t\\tprintf(\\\"XRA    \
-A\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xad: // \
-10101101\\n\\t\\t\\t\\tprintf(\\\"XRA    \
-L\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xac: // \
-10101100\\n\\t\\t\\t\\tprintf(\\\"XRA    \
-H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xab: // \
-10101011\\n\\t\\t\\t\\tprintf(\\\"XRA    \
-E\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xaa: // \
-10101010\\n\\t\\t\\t\\tprintf(\\\"XRA    \
-D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xa9: // \
-10101001\\n\\t\\t\\t\\tprintf(\\\"XRA    \
-C\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xa8: // \
-10101000\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Exclusive OR \
-register>\\n\\t\\t\\t\\t\\tXRA r\\n\\t\\t\\t\\t\\t\\t(A) <- (A) XOR (r)\\n\\t\
-\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: Z,S,P,CY,AC\\n\\t\\t\\t\\t\\tnote: The \
-CY and AC flags are cleared.\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"XRA    \
-B\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xe6: // \
-11100110\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<AND \
-immediate>\\n\\t\\t\\t\\t\\tANI data\\n\\t\\t\\t\\t\\t\\t(A) <- (A) & (byte2)\
-\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: Z,S,P,CY,AC\\n\\t\\t\\t\\t\\tnote: \
-The CY and AC flags are \
-cleared.\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"ANI    #0x%02x\\\", \
-code[1]);\\n\\t\\t\\t\\topbytes = 2;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xa6: \
-// 10100110\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<AND \
-memory>\\n\\t\\t\\t\\t\\tANA M\\n\\t\\t\\t\\t\\t\\t(A) <- (A) & \
-((H)(L))\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: Z,S,P,CY,AC\\n\\t\\t\\t\\t\
-\\tnote: The CY flag is \
-cleared.\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"ANA    M\\\");\\n\\t\\t\\t\
-\\tbreak;\\n\\t\\tcase 0xa7: // 10100111\\n\\t\\t\\t\\tprintf(\\\"ANA    \
-A\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xa5: // \
-10100101\\n\\t\\t\\t\\tprintf(\\\"ANA    \
-L\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xa4: // \
-10100100\\n\\t\\t\\t\\tprintf(\\\"ANA    \
-H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xa3: // \
-10100011\\n\\t\\t\\t\\tprintf(\\\"ANA    \
-E\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xa2: // \
-10100010\\n\\t\\t\\t\\tprintf(\\\"ANA    \
-D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xa1: // \
-10100001\\n\\t\\t\\t\\tprintf(\\\"ANA    \
-C\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xa0: // \
-10100000\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<AND \
-register>\\n\\t\\t\\t\\t\\tANA r\\n\\t\\t\\t\\t\\t\\t(A) <- (A) & \
-(r)\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: \
-Z,S,P,CY,AC\\n\\t\\t\\t\\t\\tnote: The CY flag is \
-cleared.\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"ANA    B\\\");\\n\\t\\t\\t\
-\\tbreak;\\n\\t\\tcase 0x27: // \
-00100111\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Decimal adjust accumulator>\\n\\t\
-\\t\\t\\t\\tDAA\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: \
-Z,S,P,CY,AC\\n\\t\\t\\t\\t\\tnote: \\n\\t\\t\\t\\t\\t\\tThe eight-bit number \
-in the accumulator is adjusted to form two four-bit Binary-Coded-Decimal \
-digits by the following process:\\n\\t\\t\\t\\t\\t\\t\\t1. If the value of \
-the least significant 4 bits of the accumulator is greater than 9 or if the \
-AC flag is set, 6 is added to the accumulator.\\n\\t\\t\\t\\t\\t\\t\\t2. If \
-the value of the most 4 bits of the accumulator is now greater than 9, or if \
-the CY flag is set, 6 is added to the most significant 4 bits of the \
-accumulator.\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"DAA\\\");\\n\\t\\t\\t\\\
-tbreak;\\n\\t\\tcase 0x39: // 00111001\\n\\t\\t\\t\\tprintf(\\\"DAD    \
-SP\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x29: // \
-00101001\\n\\t\\t\\t\\tprintf(\\\"DAD    \
-H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x19: // \
-00011001\\n\\t\\t\\t\\tprintf(\\\"DAD    \
-D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x09: // \
-00001001\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Add register pair to H and \
-L>\\n\\t\\t\\t\\t\\tDAD rp\\n\\t\\t\\t\\t\\t\\t(H)(L) <- (H)(L) + (rh)(rl)\\n\
-\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: \
-CY\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"DAD    \
-B\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x3b: // \
-00111011\\n\\t\\t\\t\\tprintf(\\\"DCX    \
-SP\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x2b: // \
-00101011\\n\\t\\t\\t\\tprintf(\\\"DCX    \
-H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x1b: // \
-00011011\\n\\t\\t\\t\\tprintf(\\\"DCX    \
-D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x0b: // \
-00001011\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Decrement register pair>\\n\\t\\t\
-\\t\\t\\tDCX rp\\n\\t\\t\\t\\t\\t\\t(rh)(rl) <- (rh)(rl) - 1\\n\\t\\t\\t\\t*/\
-\\n\\t\\t\\t\\tprintf(\\\"DCX    B\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase \
-0x33: // 00110011\\n\\t\\t\\t\\tprintf(\\\"INX    \
-SP\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x23: // \
-00100011\\n\\t\\t\\t\\tprintf(\\\"INX    \
-H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x13: // \
-00010011\\n\\t\\t\\t\\tprintf(\\\"INX    \
-D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x03: // \
-00000011\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Increment register pair>\\n\\t\\t\
-\\t\\t\\tINX rp\\n\\t\\t\\t\\t\\t\\t(rh)(rl) <- (rh)(rl) + 1\\n\\t\\t\\t\\t*/\
-\\n\\t\\t\\t\\tprintf(\\\"INX    B\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase \
-0x35: // 00110101\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Decrement \
-memory>\\n\\t\\t\\t\\t\\tDCR M\\n\\t\\t\\t\\t\\t\\t((H)(L)) <- ((H)(L)) - \
-1\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: \
-Z,S,P,AC\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"DCR    M\\\");\\n\\t\\t\\t\
-\\tbreak;\\n\\t\\tcase 0x3d: // 00111101\\n\\t\\t\\t\\tprintf(\\\"DCR    \
-A\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x2d: // \
-00101101\\n\\t\\t\\t\\tprintf(\\\"DCR    \
-L\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x25: // \
-00100101\\n\\t\\t\\t\\tprintf(\\\"DCR    \
-H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x1d: // \
-00011101\\n\\t\\t\\t\\tprintf(\\\"DCR    \
-E\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x15: // \
-00010101\\n\\t\\t\\t\\tprintf(\\\"DCR    \
-D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x0d: // \
-00001101\\n\\t\\t\\t\\tprintf(\\\"DCR    \
-C\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x05: // \
-00000101\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Decrement \
-register>\\n\\t\\t\\t\\t\\tDCR r\\n\\t\\t\\t\\t\\t\\t(r) <- (r) - \
-1\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: \
-Z,S,P,AC\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"DCR    B\\\");\\n\\t\\t\\t\
-\\tbreak;\\n\\t\\tcase 0x34: // \
-00110100\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Increment \
-memory>\\n\\t\\t\\t\\t\\tINR M\\n\\t\\t\\t\\t\\t\\t((H)(L)) <- ((H)(L)) + \
-1\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: \
-Z,S,P,AC\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"INR    M\\\");\\n\\t\\t\\t\
-\\tbreak;\\n\\t\\tcase 0x3c: // 00111100\\n\\t\\t\\t\\tprintf(\\\"INR    \
-A\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x2c: // \
-00101100\\n\\t\\t\\t\\tprintf(\\\"INR    \
-L\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x24: // \
-00100100\\n\\t\\t\\t\\tprintf(\\\"INR    \
-H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x1c: // \
-00011100\\n\\t\\t\\t\\tprintf(\\\"INR    \
-E\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x14: // \
-00010100\\n\\t\\t\\t\\tprintf(\\\"INR    \
-D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x0c: // \
-00001100\\n\\t\\t\\t\\tprintf(\\\"INR    \
-C\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x04: // \
-00000100\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Increment \
-register>\\n\\t\\t\\t\\t\\tINR r\\n\\t\\t\\t\\t\\t\\t(r) <- (r) + \
-1\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: \
-Z,S,P,AC\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"INR    B\\\");\\n\\t\\t\\t\
-\\tbreak;\\n\\t\\tcase 0xde: // \
-11011110\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Subtract immediate with \
-borrow>\\n\\t\\t\\t\\t\\tSBI data\\n\\t\\t\\t\\t\\t\\t(A) <- (A) - (byte2) - \
-(CY)\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: \
-Z,S,P,CY,AC\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"SBI    #0x%02x\\\", \
-code[1]);\\n\\t\\t\\t\\topbytes = 2;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x9e: \
-// 10011110\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Subtract memory with \
-borrow>\\n\\t\\t\\t\\t\\tSBB M\\n\\t\\t\\t\\t\\t\\t(A) <- (A) - ((H)(L)) - \
-(CY)\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: \
-Z,S,P,CY,AC\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"SBB    M\\\");\\n\\t\\t\
-\\t\\tbreak;\\n\\t\\tcase 0x9f: // 10011111\\n\\t\\t\\t\\tprintf(\\\"SBB    A\
-\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x9d: // \
-10011101\\n\\t\\t\\t\\tprintf(\\\"SBB    \
-L\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x9c: // \
-10011100\\n\\t\\t\\t\\tprintf(\\\"SBB    \
-H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x9b: // \
-10011011\\n\\t\\t\\t\\tprintf(\\\"SBB    \
-E\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x9a: // \
-10011010\\n\\t\\t\\t\\tprintf(\\\"SBB    \
-D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x99: // \
-10011001\\n\\t\\t\\t\\tprintf(\\\"SBB    \
-C\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x98: // \
-10011000\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Subtract register with borrow>\\n\
-\\t\\t\\t\\t\\tSBB r\\n\\t\\t\\t\\t\\t\\t(A) <- (A) - (r) - \
-(CY)\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: \
-Z,S,P,CY,AC\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"SBB    B\\\");\\n\\t\\t\
-\\t\\tbreak;\\n\\t\\tcase 0xd6: // \
-11010110\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Subtract \
-immediate>\\n\\t\\t\\t\\t\\tSUI data\\n\\t\\t\\t\\t\\t\\t(A) <- (A) - (byte2)\
-\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: Z,S,P,CY,AC\\n\\t\\t\\t\\t*/\\n\\t\
-\\t\\t\\tprintf(\\\"SUI    #0x%02x\\\", code[1]);\\n\\t\\t\\t\\topbytes = \
-2;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x96: // 10010110\\n\\t\\t\\t\\t/*\\n\\t\
-\\t\\t\\t\\t<Subtract memory>\\n\\t\\t\\t\\t\\tSUB M\\n\\t\\t\\t\\t\\t\\t(A) \
-<- (A) - ((H)(L))\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: Z,S,P,CY,AC\\n\\t\
-\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"SUB    \
-M\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x97: // \
-10010111\\n\\t\\t\\t\\tprintf(\\\"SUB    \
-A\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x95: // \
-10010101\\n\\t\\t\\t\\tprintf(\\\"SUB    \
-L\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x94: // \
-10010100\\n\\t\\t\\t\\tprintf(\\\"SUB    \
-H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x93: // \
-10010011\\n\\t\\t\\t\\tprintf(\\\"SUB    \
-E\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x92: // \
-10010010\\n\\t\\t\\t\\tprintf(\\\"SUB    \
-D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x91: // \
-10010001\\n\\t\\t\\t\\tprintf(\\\"SUB    \
-C\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x90: // \
-10010000\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Subtract register>\\n\\t\\t\\t\\t\
-\\tSUB r\\n\\t\\t\\t\\t\\t\\t(A) <- (A) - \
-(r)\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: Z,S,P,CY,AC\\n\\t\\t\\t\\t*/\\n\
-\\t\\t\\t\\tprintf(\\\"SUB    B\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xce: \
-// 11001110\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Add immediate with \
-carry>\\n\\t\\t\\t\\t\\tACI data\\n\\t\\t\\t\\t\\t\\t(A) <- (A) + (byte2) + \
-(CY)\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: \
-Z,S,P,CY,AC\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"ACI    #0x%02x\\\", \
-code[1]);\\n\\t\\t\\t\\topbytes = 2;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x8e: \
-// 10001110\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Add memory with \
-carry>\\n\\t\\t\\t\\t\\tADC M\\n\\t\\t\\t\\t\\t\\t(A) <- (A) + ((H)(L)) + \
-(CY)\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: \
-Z,S,P,CY,AC\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"ADC    M\\\");\\n\\t\\t\
-\\t\\tbreak;\\n\\t\\tcase 0x8f: // 10001111\\n\\t\\t\\t\\tprintf(\\\"ADC    A\
-\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x8d: // \
-10001101\\n\\t\\t\\t\\tprintf(\\\"ADC    \
-L\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x8c: // \
-10001100\\n\\t\\t\\t\\tprintf(\\\"ADC    \
-H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x8b: // \
-10001011\\n\\t\\t\\t\\tprintf(\\\"ADC    \
-E\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x8a: // \
-10001010\\n\\t\\t\\t\\tprintf(\\\"ADC    \
-D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x89: // \
-10001001\\n\\t\\t\\t\\tprintf(\\\"ADC    \
-C\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x88: // \
-10001000\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Add register with carry>\\n\\t\\t\
-\\t\\t\\tADC r\\n\\t\\t\\t\\t\\t\\t(A) <- (A) + (r) + \
-(CY)\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: \
-Z,S,P,CY,AC\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"ADC    B\\\");\\n\\t\\t\
-\\t\\tbreak;\\n\\t\\tcase 0xc6: // \
-11000110\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Add \
-immediate>\\n\\t\\t\\t\\t\\tADI data\\n\\t\\t\\t\\t\\t\\t(A) <- (A) + (byte2)\
-\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: Z,S,P,CY,AC\\n\\t\\t\\t\\t*/\\n\\t\
-\\t\\t\\tprintf(\\\"ADI    #0x%02x\\\", code[1]);\\n\\t\\t\\t\\topbytes = \
-2;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x86: // 10000110\\n\\t\\t\\t\\t/*\\n\\t\
-\\t\\t\\t\\t<Add memory>\\n\\t\\t\\t\\t\\tADD M\\n\\t\\t\\t\\t\\t\\t(A) <- \
-(A) + ((H)(L))\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: Z,S,P,CY,AC\\n\\t\\t\
-\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"ADD    \
-M\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x87: // \
-10000111\\n\\t\\t\\t\\tprintf(\\\"ADD    \
-A\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x85: // \
-10000101\\n\\t\\t\\t\\tprintf(\\\"ADD    \
-L\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x84: // \
-10000100\\n\\t\\t\\t\\tprintf(\\\"ADD    \
-H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x83: // \
-10000011\\n\\t\\t\\t\\tprintf(\\\"ADD    \
-E\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x82: // \
-10000010\\n\\t\\t\\t\\tprintf(\\\"ADD    \
-D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x81: // \
-10000001\\n\\t\\t\\t\\tprintf(\\\"ADD    \
-C\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x80: // \
-10000000\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Add \
-register>\\n\\t\\t\\t\\t\\tADD r\\n\\t\\t\\t\\t\\t\\t(A) <- (A) + \
-(r)\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\tflags: Z,S,P,CY,AC\\n\\t\\t\\t\\t*/\\n\
-\\t\\t\\t\\tprintf(\\\"ADD    B\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0xeb: \
-// 11101011\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Exchange H and L with D and E>\
-\\n\\t\\t\\t\\t\\tXCHG\\n\\t\\t\\t\\t\\t\\t(H) <-> \
-(D)\\n\\t\\t\\t\\t\\t\\t(L) <-> \
-(E)\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"XCHG\\\");\\n\\t\\t\\t\\tbreak;\
-\\n\\t\\tcase 0x12: // 00010010\\n\\t\\t\\t\\tprintf(\\\"STAX   D\\\");\\n\\t\
-\\t\\t\\tbreak;\\n\\t\\tcase 0x02: // \
-00000010\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Store accumulator indirect>\\n\\t\
-\\t\\t\\t\\tSTAX rp\\n\\t\\t\\t\\t\\t\\t((rp)) <- \
-(A)\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"STAX   \
-B\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x1a: // \
-00011010\\n\\t\\t\\t\\tprintf(\\\"LDAX   \
-D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x0a: // \
-00001010\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Load accumulator \
-indirect>\\n\\t\\t\\t\\t\\tLDAX rp\\n\\t\\t\\t\\t\\t\\t(A) <- ((rp))\\n\\t\\t\
-\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"LDAX   \
-B\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x22: // \
-00100010\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Store H and L direct>\\n\\t\\t\\t\
-\\t\\tSHLD addr\\n\\t\\t\\t\\t\\t\\t((byte3)(byte2)) <- (L)\\n\\t\\t\\t\\t\\t\
-\\t((byte3)(byte2) + 1) <- (H)\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"SHLD \
-  #$%02x%02x\\\", code[2], code[1]);\\n\\t\\t\\t\\topbytes = \
-3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x2a: // 00101010\\n\\t\\t\\t\\t/*\\n\\t\
-\\t\\t\\t\\t<Load H and L direct>\\n\\t\\t\\t\\t\\tLHLD \
-addr\\n\\t\\t\\t\\t\\t\\t(L) <- ((byte3)(byte2))\\n\\t\\t\\t\\t\\t\\t(H) <- \
-((byte3)(byte2) + 1)\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"LHLD   \
-#$%02x%02x\\\", code[2], code[1]);\\n\\t\\t\\t\\topbytes = \
-3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x32: // 00110010\\n\\t\\t\\t\\t/*\\n\\t\
-\\t\\t\\t\\t<Store accumulator direct>\\n\\t\\t\\t\\t\\tSTA \
-addr\\n\\t\\t\\t\\t\\t\\t((byte3)(byte2)) <- (A)\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\
-\\tprintf(\\\"STA    #$%02x%02x\\\", code[2], code[1]);\\n\\t\\t\\t\\topbytes \
-= 3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x3a: // \
-00111010\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Load accumulator direct>\\n\\t\\t\
-\\t\\t\\tLDA addr\\n\\t\\t\\t\\t\\t\\t(A) <- \
-((byte3)(byte2))\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"LDA    \
-#$%02x%02x\\\", code[2], code[1]);\\n\\t\\t\\t\\topbytes = \
-3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x31: // \
-00110001\\n\\t\\t\\t\\tprintf(\\\"LXI    SP,#0x%02x%02x\\\", code[2], \
-code[1]);\\n\\t\\t\\t\\topbytes = 3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x21: \
-// 00100001\\n\\t\\t\\t\\tprintf(\\\"LXI    H,#0x%02x%02x\\\", code[2], \
-code[1]);\\n\\t\\t\\t\\topbytes = 3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x11: \
-// 00010001\\n\\t\\t\\t\\tprintf(\\\"LXI    D,#0x%02x%02x\\\", code[2], \
-code[1]);\\n\\t\\t\\t\\topbytes = 3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x01: \
-// 00000001\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Load register pair \
-immediate>\\n\\t\\t\\t\\t\\tLXI rp,data 16\\n\\t\\t\\t\\t\\t\\t(rh) <- \
-(byte3)\\n\\t\\t\\t\\t\\t\\t(rl) <- \
-(byte2)\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"LXI    B,#0x%02x%02x\\\", \
-code[2], code[1]);\\n\\t\\t\\t\\topbytes = \
-3;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x36: // 00110110\\n\\t\\t\\t\\t/*\\n\\t\
-\\t\\t\\t\\t<Move to memory immediate>\\n\\t\\t\\t\\t\\tMVI \
-M,data\\n\\t\\t\\t\\t\\t\\t((H)(L)) <- \
-(byte2)\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"MVI    M,#0x%02x\\\", \
-code[1]);\\n\\t\\t\\t\\topbytes = 2;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x3e: \
-// 00111110\\n\\t\\t\\t\\tprintf(\\\"MVI    A,#0x%02x\\\", code[1]);\\n\\t\\t\
-\\t\\topbytes = 2;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x2e: // \
-00101110\\n\\t\\t\\t\\tprintf(\\\"MVI    L,#0x%02x\\\", code[1]);\\n\\t\\t\\t\
-\\topbytes = 2;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x26: // \
-00100110\\n\\t\\t\\t\\tprintf(\\\"MVI    H,#0x%02x\\\", code[1]);\\n\\t\\t\\t\
-\\topbytes = 2;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x1e: // \
-00011110\\n\\t\\t\\t\\tprintf(\\\"MVI    E,#0x%02x\\\", code[1]);\\n\\t\\t\\t\
-\\topbytes = 2;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x16: // \
-00010110\\n\\t\\t\\t\\tprintf(\\\"MVI    D,#0x%02x\\\", code[1]);\\n\\t\\t\\t\
-\\topbytes = 2;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x0e: // \
-00001110\\n\\t\\t\\t\\tprintf(\\\"MVI    C,#0x%02x\\\", code[1]);\\n\\t\\t\\t\
-\\topbytes = 2;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x06: // \
-00000110\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Move \
-immediate>\\n\\t\\t\\t\\t\\tMVI r,data\\n\\t\\t\\t\\t\\t\\t(r) <- \
-(byte2)\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"MVI    B,#0x%02x\\\", \
-code[1]);\\n\\t\\t\\t\\topbytes = 2;\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x77: \
-// 01110111\\n\\t\\t\\t\\tprintf(\\\"MOV    M,A\\\");\\n\\t\\t\\t\\tbreak;\\n\
-\\t\\tcase 0x75: // 01110101\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-M,L\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x74: // \
-01110100\\n\\t\\t\\t\\tprintf(\\\"MOV    M,H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x73: // 01110011\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-M,E\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x72: // \
-01110010\\n\\t\\t\\t\\tprintf(\\\"MOV    M,D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x71: // 01110001\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-M,C\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x70: // \
-01110000\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Move to \
-memory>\\n\\t\\t\\t\\t\\tMOV M,r\\n\\t\\t\\t\\t\\t\\t((H)(L)) <- (r)\\n\\t\\t\
-\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"MOV    M,B\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x7e: // 01111110\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-A,M\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x6e: // \
-01101110\\n\\t\\t\\t\\tprintf(\\\"MOV    L,M\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x66: // 01100110\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-H,M\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x5e: // \
-01011110\\n\\t\\t\\t\\tprintf(\\\"MOV    E,M\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x56: // 01010110\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-D,M\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x4e: // \
-01001110\\n\\t\\t\\t\\tprintf(\\\"MOV    C,M\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x46: // 01000110\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Move from \
-memory>\\n\\t\\t\\t\\t\\tMOV r,M\\n\\t\\t\\t\\t\\t\\t(r) <- ((H)(L))\\n\\t\\t\
-\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"MOV    B,M\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x7f: // 01111111\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-A,A\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x7d: // \
-01111101\\n\\t\\t\\t\\tprintf(\\\"MOV    A,L\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x7c: // 01111100\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-A,H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x7b: // \
-01111011\\n\\t\\t\\t\\tprintf(\\\"MOV    A,E\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x7a: // 01111010\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-A,D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x79: // \
-01111001\\n\\t\\t\\t\\tprintf(\\\"MOV    A,C\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x78: // 01111000\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-A,B\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x6f: // \
-01101111\\n\\t\\t\\t\\tprintf(\\\"MOV    L,A\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x6d: // 01101101\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-L,L\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x6c: // \
-01101100\\n\\t\\t\\t\\tprintf(\\\"MOV    L,H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x6b: // 01101011\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-L,E\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x6a: // \
-01101010\\n\\t\\t\\t\\tprintf(\\\"MOV    L,D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x69: // 01101001\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-L,C\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x68: // \
-01101000\\n\\t\\t\\t\\tprintf(\\\"MOV    L,B\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x67: // 01100111\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-H,A\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x65: // \
-01100101\\n\\t\\t\\t\\tprintf(\\\"MOV    H,L\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x64: // 01100100\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-H,H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x63: // \
-01100011\\n\\t\\t\\t\\tprintf(\\\"MOV    H,E\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x62: // 01100010\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-H,D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x61: // \
-01100001\\n\\t\\t\\t\\tprintf(\\\"MOV    H,C\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x60: // 01100000\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-H,B\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x5f: // \
-01011111\\n\\t\\t\\t\\tprintf(\\\"MOV    E,A\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x5d: // 01011101\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-E,L\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x5c: // \
-01011100\\n\\t\\t\\t\\tprintf(\\\"MOV    E,H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x5b: // 01011011\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-E,E\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x5a: // \
-01011010\\n\\t\\t\\t\\tprintf(\\\"MOV    E,D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x59: // 01011001\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-E,C\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x58: // \
-01011000\\n\\t\\t\\t\\tprintf(\\\"MOV    E,B\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x57: // 01010111\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-D,A\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x55: // \
-01010101\\n\\t\\t\\t\\tprintf(\\\"MOV    D,L\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x54: // 01010100\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-D,H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x53: // \
-01010011\\n\\t\\t\\t\\tprintf(\\\"MOV    D,E\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x52: // 01010010\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-D,D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x51: // \
-01010001\\n\\t\\t\\t\\tprintf(\\\"MOV    D,C\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x50: // 01010000\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-D,B\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x4f: // \
-01001111\\n\\t\\t\\t\\tprintf(\\\"MOV    C,A\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x4d: // 01001101\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-C,L\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x4c: // \
-01001100\\n\\t\\t\\t\\tprintf(\\\"MOV    C,H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x4b: // 01001011\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-C,E\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x4a: // \
-01001010\\n\\t\\t\\t\\tprintf(\\\"MOV    C,D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x49: // 01001001\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-C,C\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x48: // \
-01001000\\n\\t\\t\\t\\tprintf(\\\"MOV    C,B\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x47: // 01000111\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-B,A\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x45: // \
-01000101\\n\\t\\t\\t\\tprintf(\\\"MOV    B,L\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x44: // 01000100\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-B,H\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x43: // \
-01000011\\n\\t\\t\\t\\tprintf(\\\"MOV    B,E\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x42: // 01000010\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-B,D\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\\tcase 0x41: // \
-01000001\\n\\t\\t\\t\\tprintf(\\\"MOV    B,C\\\");\\n\\t\\t\\t\\tbreak;\\n\\t\
-\\tcase 0x40: // 01000000\\n\\t\\t\\t\\t/*\\n\\t\\t\\t\\t\\t<Move \
-register>\\n\\t\\t\\t\\t\\tMOV r1,r2\\n\\t\\t\\t\\t\\t\\t(r1) <- \
-(r2)\\n\\t\\t\\t\\t*/\\n\\t\\t\\t\\tprintf(\\\"MOV    \
-B,B\\\");\\n\\t\\t\\t\\tbreak;\"\>"], "Output",
+Cell[BoxData["\<\"\\t\\tcase 0x40: // \
+01000000\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Move register>\\n\\t\\t\\t\\tMOV \
+r1,r2\\n\\t\\t\\t\\t\\t(r1) <- (r2)\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"MOV   \
+ B,B\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x41: // \
+01000001\\n\\t\\t\\tprintf(\\\"MOV    \
+B,C\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x42: // 01000010\\n\\t\\t\\tprintf(\
+\\\"MOV    B,D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x43: // \
+01000011\\n\\t\\t\\tprintf(\\\"MOV    \
+B,E\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x44: // 01000100\\n\\t\\t\\tprintf(\
+\\\"MOV    B,H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x45: // \
+01000101\\n\\t\\t\\tprintf(\\\"MOV    \
+B,L\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x47: // 01000111\\n\\t\\t\\tprintf(\
+\\\"MOV    B,A\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x48: // \
+01001000\\n\\t\\t\\tprintf(\\\"MOV    \
+C,B\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x49: // 01001001\\n\\t\\t\\tprintf(\
+\\\"MOV    C,C\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x4a: // \
+01001010\\n\\t\\t\\tprintf(\\\"MOV    \
+C,D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x4b: // 01001011\\n\\t\\t\\tprintf(\
+\\\"MOV    C,E\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x4c: // \
+01001100\\n\\t\\t\\tprintf(\\\"MOV    \
+C,H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x4d: // 01001101\\n\\t\\t\\tprintf(\
+\\\"MOV    C,L\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x4f: // \
+01001111\\n\\t\\t\\tprintf(\\\"MOV    \
+C,A\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x50: // 01010000\\n\\t\\t\\tprintf(\
+\\\"MOV    D,B\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x51: // \
+01010001\\n\\t\\t\\tprintf(\\\"MOV    \
+D,C\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x52: // 01010010\\n\\t\\t\\tprintf(\
+\\\"MOV    D,D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x53: // \
+01010011\\n\\t\\t\\tprintf(\\\"MOV    \
+D,E\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x54: // 01010100\\n\\t\\t\\tprintf(\
+\\\"MOV    D,H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x55: // \
+01010101\\n\\t\\t\\tprintf(\\\"MOV    \
+D,L\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x57: // 01010111\\n\\t\\t\\tprintf(\
+\\\"MOV    D,A\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x58: // \
+01011000\\n\\t\\t\\tprintf(\\\"MOV    \
+E,B\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x59: // 01011001\\n\\t\\t\\tprintf(\
+\\\"MOV    E,C\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x5a: // \
+01011010\\n\\t\\t\\tprintf(\\\"MOV    \
+E,D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x5b: // 01011011\\n\\t\\t\\tprintf(\
+\\\"MOV    E,E\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x5c: // \
+01011100\\n\\t\\t\\tprintf(\\\"MOV    \
+E,H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x5d: // 01011101\\n\\t\\t\\tprintf(\
+\\\"MOV    E,L\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x5f: // \
+01011111\\n\\t\\t\\tprintf(\\\"MOV    \
+E,A\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x60: // 01100000\\n\\t\\t\\tprintf(\
+\\\"MOV    H,B\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x61: // \
+01100001\\n\\t\\t\\tprintf(\\\"MOV    \
+H,C\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x62: // 01100010\\n\\t\\t\\tprintf(\
+\\\"MOV    H,D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x63: // \
+01100011\\n\\t\\t\\tprintf(\\\"MOV    \
+H,E\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x64: // 01100100\\n\\t\\t\\tprintf(\
+\\\"MOV    H,H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x65: // \
+01100101\\n\\t\\t\\tprintf(\\\"MOV    \
+H,L\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x67: // 01100111\\n\\t\\t\\tprintf(\
+\\\"MOV    H,A\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x68: // \
+01101000\\n\\t\\t\\tprintf(\\\"MOV    \
+L,B\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x69: // 01101001\\n\\t\\t\\tprintf(\
+\\\"MOV    L,C\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x6a: // \
+01101010\\n\\t\\t\\tprintf(\\\"MOV    \
+L,D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x6b: // 01101011\\n\\t\\t\\tprintf(\
+\\\"MOV    L,E\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x6c: // \
+01101100\\n\\t\\t\\tprintf(\\\"MOV    \
+L,H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x6d: // 01101101\\n\\t\\t\\tprintf(\
+\\\"MOV    L,L\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x6f: // \
+01101111\\n\\t\\t\\tprintf(\\\"MOV    \
+L,A\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x78: // 01111000\\n\\t\\t\\tprintf(\
+\\\"MOV    A,B\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x79: // \
+01111001\\n\\t\\t\\tprintf(\\\"MOV    \
+A,C\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x7a: // 01111010\\n\\t\\t\\tprintf(\
+\\\"MOV    A,D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x7b: // \
+01111011\\n\\t\\t\\tprintf(\\\"MOV    \
+A,E\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x7c: // 01111100\\n\\t\\t\\tprintf(\
+\\\"MOV    A,H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x7d: // \
+01111101\\n\\t\\t\\tprintf(\\\"MOV    \
+A,L\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x7f: // 01111111\\n\\t\\t\\tprintf(\
+\\\"MOV    A,A\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x46: // \
+01000110\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Move from memory>\\n\\t\\t\\t\\tMOV r,M\
+\\n\\t\\t\\t\\t\\t(r) <- ((H)(L))\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"MOV    \
+B,M\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x4e: // 01001110\\n\\t\\t\\tprintf(\
+\\\"MOV    C,M\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x56: // \
+01010110\\n\\t\\t\\tprintf(\\\"MOV    \
+D,M\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x5e: // 01011110\\n\\t\\t\\tprintf(\
+\\\"MOV    E,M\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x66: // \
+01100110\\n\\t\\t\\tprintf(\\\"MOV    \
+H,M\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x6e: // 01101110\\n\\t\\t\\tprintf(\
+\\\"MOV    L,M\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x7e: // \
+01111110\\n\\t\\t\\tprintf(\\\"MOV    \
+A,M\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x70: // \
+01110000\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Move to memory>\\n\\t\\t\\t\\tMOV \
+M,r\\n\\t\\t\\t\\t\\t((H)(L)) <- (r)\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"MOV  \
+  M,B\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x71: // \
+01110001\\n\\t\\t\\tprintf(\\\"MOV    \
+M,C\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x72: // 01110010\\n\\t\\t\\tprintf(\
+\\\"MOV    M,D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x73: // \
+01110011\\n\\t\\t\\tprintf(\\\"MOV    \
+M,E\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x74: // 01110100\\n\\t\\t\\tprintf(\
+\\\"MOV    M,H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x75: // \
+01110101\\n\\t\\t\\tprintf(\\\"MOV    \
+M,L\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x77: // 01110111\\n\\t\\t\\tprintf(\
+\\\"MOV    M,A\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x06: // \
+00000110\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Move immediate>\\n\\t\\t\\t\\tMVI \
+r,data\\n\\t\\t\\t\\t\\t(r) <- \
+(byte2)\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"MVI    B,#0x%02x\\\", \
+code[1]);\\n\\t\\t\\topbytes = 2;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x0e: // \
+00001110\\n\\t\\t\\tprintf(\\\"MVI    C,#0x%02x\\\", \
+code[1]);\\n\\t\\t\\topbytes = 2;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x16: // \
+00010110\\n\\t\\t\\tprintf(\\\"MVI    D,#0x%02x\\\", \
+code[1]);\\n\\t\\t\\topbytes = 2;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x1e: // \
+00011110\\n\\t\\t\\tprintf(\\\"MVI    E,#0x%02x\\\", \
+code[1]);\\n\\t\\t\\topbytes = 2;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x26: // \
+00100110\\n\\t\\t\\tprintf(\\\"MVI    H,#0x%02x\\\", \
+code[1]);\\n\\t\\t\\topbytes = 2;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x2e: // \
+00101110\\n\\t\\t\\tprintf(\\\"MVI    L,#0x%02x\\\", \
+code[1]);\\n\\t\\t\\topbytes = 2;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x3e: // \
+00111110\\n\\t\\t\\tprintf(\\\"MVI    A,#0x%02x\\\", \
+code[1]);\\n\\t\\t\\topbytes = 2;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x36: // \
+00110110\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Move to memory \
+immediate>\\n\\t\\t\\t\\tMVI M,data\\n\\t\\t\\t\\t\\t((H)(L)) <- \
+(byte2)\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"MVI    M,#0x%02x\\\", \
+code[1]);\\n\\t\\t\\topbytes = 2;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x01: // \
+00000001\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Load register pair \
+immediate>\\n\\t\\t\\t\\tLXI rp,data 16\\n\\t\\t\\t\\t\\t(rh) <- \
+(byte3)\\n\\t\\t\\t\\t\\t(rl) <- \
+(byte2)\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"LXI    B,#0x%02x%02x\\\", \
+code[2], code[1]);\\n\\t\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0x11: // 00010001\\n\\t\\t\\tprintf(\\\"LXI    D,#0x%02x%02x\\\", code[2], \
+code[1]);\\n\\t\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x21: // \
+00100001\\n\\t\\t\\tprintf(\\\"LXI    H,#0x%02x%02x\\\", code[2], \
+code[1]);\\n\\t\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x31: // \
+00110001\\n\\t\\t\\tprintf(\\\"LXI    SP,#0x%02x%02x\\\", code[2], \
+code[1]);\\n\\t\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x3a: // \
+00111010\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Load accumulator \
+direct>\\n\\t\\t\\t\\tLDA addr\\n\\t\\t\\t\\t\\t(A) <- ((byte3)(byte2))\\n\\t\
+\\t\\t*/\\n\\t\\t\\tprintf(\\\"LDA    #$%02x%02x\\\", code[2], \
+code[1]);\\n\\t\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x32: // \
+00110010\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Store accumulator \
+direct>\\n\\t\\t\\t\\tSTA addr\\n\\t\\t\\t\\t\\t((byte3)(byte2)) <- (A)\\n\\t\
+\\t\\t*/\\n\\t\\t\\tprintf(\\\"STA    #$%02x%02x\\\", code[2], \
+code[1]);\\n\\t\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x2a: // \
+00101010\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Load H and L direct>\\n\\t\\t\\t\\tLHLD \
+addr\\n\\t\\t\\t\\t\\t(L) <- ((byte3)(byte2))\\n\\t\\t\\t\\t\\t(H) <- \
+((byte3)(byte2) + 1)\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"LHLD   \
+#$%02x%02x\\\", code[2], code[1]);\\n\\t\\t\\topbytes = \
+3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x22: // 00100010\\n\\t\\t\\t/*\\n\\t\\t\\t\
+\\t<Store H and L direct>\\n\\t\\t\\t\\tSHLD \
+addr\\n\\t\\t\\t\\t\\t((byte3)(byte2)) <- \
+(L)\\n\\t\\t\\t\\t\\t((byte3)(byte2) + 1) <- \
+(H)\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"SHLD   #$%02x%02x\\\", code[2], \
+code[1]);\\n\\t\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x0a: // \
+00001010\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Load accumulator \
+indirect>\\n\\t\\t\\t\\tLDAX rp\\n\\t\\t\\t\\t\\t(A) <- \
+((rp))\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"LDAX   \
+B\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x1a: // 00011010\\n\\t\\t\\tprintf(\\\
+\"LDAX   D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x02: // \
+00000010\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Store accumulator indirect>\\n\\t\\t\\t\
+\\tSTAX rp\\n\\t\\t\\t\\t\\t((rp)) <- \
+(A)\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"STAX   \
+B\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x12: // 00010010\\n\\t\\t\\tprintf(\\\
+\"STAX   D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xeb: // \
+11101011\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Exchange H and L with D and E>\\n\\t\\t\
+\\t\\tXCHG\\n\\t\\t\\t\\t\\t(H) <-> (D)\\n\\t\\t\\t\\t\\t(L) <-> (E)\\n\\t\\t\
+\\t*/\\n\\t\\t\\tprintf(\\\"XCHG\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x80: \
+// 10000000\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Add register>\\n\\t\\t\\t\\tADD r\\n\
+\\t\\t\\t\\t\\t(A) <- (A) + (r)\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,CY,AC\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"ADD    \
+B\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x81: // 10000001\\n\\t\\t\\tprintf(\\\
+\"ADD    C\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x82: // \
+10000010\\n\\t\\t\\tprintf(\\\"ADD    D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0x83: // 10000011\\n\\t\\t\\tprintf(\\\"ADD    \
+E\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x84: // 10000100\\n\\t\\t\\tprintf(\\\
+\"ADD    H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x85: // \
+10000101\\n\\t\\t\\tprintf(\\\"ADD    L\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0x87: // 10000111\\n\\t\\t\\tprintf(\\\"ADD    \
+A\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x86: // \
+10000110\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Add memory>\\n\\t\\t\\t\\tADD \
+M\\n\\t\\t\\t\\t\\t(A) <- (A) + ((H)(L))\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,CY,AC\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"ADD    \
+M\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xc6: // \
+11000110\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Add immediate>\\n\\t\\t\\t\\tADI \
+data\\n\\t\\t\\t\\t\\t(A) <- (A) + \
+(byte2)\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,CY,AC\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"ADI    #0x%02x\\\", code[1]);\
+\\n\\t\\t\\topbytes = 2;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x88: // \
+10001000\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Add register with \
+carry>\\n\\t\\t\\t\\tADC r\\n\\t\\t\\t\\t\\t(A) <- (A) + (r) + \
+(CY)\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,CY,AC\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"ADC    \
+B\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x89: // 10001001\\n\\t\\t\\tprintf(\\\
+\"ADC    C\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x8a: // \
+10001010\\n\\t\\t\\tprintf(\\\"ADC    D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0x8b: // 10001011\\n\\t\\t\\tprintf(\\\"ADC    \
+E\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x8c: // 10001100\\n\\t\\t\\tprintf(\\\
+\"ADC    H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x8d: // \
+10001101\\n\\t\\t\\tprintf(\\\"ADC    L\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0x8f: // 10001111\\n\\t\\t\\tprintf(\\\"ADC    \
+A\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x8e: // \
+10001110\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Add memory with \
+carry>\\n\\t\\t\\t\\tADC M\\n\\t\\t\\t\\t\\t(A) <- (A) + ((H)(L)) + \
+(CY)\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,CY,AC\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"ADC    \
+M\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xce: // \
+11001110\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Add immediate with \
+carry>\\n\\t\\t\\t\\tACI data\\n\\t\\t\\t\\t\\t(A) <- (A) + (byte2) + (CY)\\n\
+\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,CY,AC\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"ACI    #0x%02x\\\", code[1]);\
+\\n\\t\\t\\topbytes = 2;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x90: // \
+10010000\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Subtract register>\\n\\t\\t\\t\\tSUB \
+r\\n\\t\\t\\t\\t\\t(A) <- (A) - (r)\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,CY,AC\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"SUB    \
+B\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x91: // 10010001\\n\\t\\t\\tprintf(\\\
+\"SUB    C\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x92: // \
+10010010\\n\\t\\t\\tprintf(\\\"SUB    D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0x93: // 10010011\\n\\t\\t\\tprintf(\\\"SUB    \
+E\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x94: // 10010100\\n\\t\\t\\tprintf(\\\
+\"SUB    H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x95: // \
+10010101\\n\\t\\t\\tprintf(\\\"SUB    L\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0x97: // 10010111\\n\\t\\t\\tprintf(\\\"SUB    \
+A\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x96: // \
+10010110\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Subtract memory>\\n\\t\\t\\t\\tSUB M\\n\
+\\t\\t\\t\\t\\t(A) <- (A) - ((H)(L))\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,CY,AC\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"SUB    \
+M\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xd6: // \
+11010110\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Subtract immediate>\\n\\t\\t\\t\\tSUI \
+data\\n\\t\\t\\t\\t\\t(A) <- (A) - \
+(byte2)\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,CY,AC\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"SUI    #0x%02x\\\", code[1]);\
+\\n\\t\\t\\topbytes = 2;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x98: // \
+10011000\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Subtract register with borrow>\\n\\t\\t\
+\\t\\tSBB r\\n\\t\\t\\t\\t\\t(A) <- (A) - (r) - \
+(CY)\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,CY,AC\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"SBB    \
+B\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x99: // 10011001\\n\\t\\t\\tprintf(\\\
+\"SBB    C\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x9a: // \
+10011010\\n\\t\\t\\tprintf(\\\"SBB    D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0x9b: // 10011011\\n\\t\\t\\tprintf(\\\"SBB    \
+E\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x9c: // 10011100\\n\\t\\t\\tprintf(\\\
+\"SBB    H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x9d: // \
+10011101\\n\\t\\t\\tprintf(\\\"SBB    L\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0x9f: // 10011111\\n\\t\\t\\tprintf(\\\"SBB    \
+A\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x9e: // \
+10011110\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Subtract memory with \
+borrow>\\n\\t\\t\\t\\tSBB M\\n\\t\\t\\t\\t\\t(A) <- (A) - ((H)(L)) - \
+(CY)\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,CY,AC\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"SBB    \
+M\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xde: // \
+11011110\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Subtract immediate with \
+borrow>\\n\\t\\t\\t\\tSBI data\\n\\t\\t\\t\\t\\t(A) <- (A) - (byte2) - \
+(CY)\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,CY,AC\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"SBI    #0x%02x\\\", code[1]);\
+\\n\\t\\t\\topbytes = 2;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x04: // \
+00000100\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Increment register>\\n\\t\\t\\t\\tINR r\
+\\n\\t\\t\\t\\t\\t(r) <- (r) + 1\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: Z,S,P,AC\
+\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"INR    \
+B\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x0c: // 00001100\\n\\t\\t\\tprintf(\\\
+\"INR    C\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x14: // \
+00010100\\n\\t\\t\\tprintf(\\\"INR    D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0x1c: // 00011100\\n\\t\\t\\tprintf(\\\"INR    \
+E\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x24: // 00100100\\n\\t\\t\\tprintf(\\\
+\"INR    H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x2c: // \
+00101100\\n\\t\\t\\tprintf(\\\"INR    L\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0x3c: // 00111100\\n\\t\\t\\tprintf(\\\"INR    \
+A\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x34: // \
+00110100\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Increment memory>\\n\\t\\t\\t\\tINR \
+M\\n\\t\\t\\t\\t\\t((H)(L)) <- ((H)(L)) + \
+1\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,AC\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"INR    M\\\");\\n\\t\\t\\tbreak;\
+\\n\\t\\tcase 0x05: // 00000101\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Decrement \
+register>\\n\\t\\t\\t\\tDCR r\\n\\t\\t\\t\\t\\t(r) <- (r) - \
+1\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,AC\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"DCR    B\\\");\\n\\t\\t\\tbreak;\
+\\n\\t\\tcase 0x0d: // 00001101\\n\\t\\t\\tprintf(\\\"DCR    C\\\");\\n\\t\\t\
+\\tbreak;\\n\\t\\tcase 0x15: // 00010101\\n\\t\\t\\tprintf(\\\"DCR    D\\\");\
+\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x1d: // 00011101\\n\\t\\t\\tprintf(\\\"DCR   \
+ E\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x25: // \
+00100101\\n\\t\\t\\tprintf(\\\"DCR    H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0x2d: // 00101101\\n\\t\\t\\tprintf(\\\"DCR    \
+L\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x3d: // 00111101\\n\\t\\t\\tprintf(\\\
+\"DCR    A\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x35: // \
+00110101\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Decrement memory>\\n\\t\\t\\t\\tDCR \
+M\\n\\t\\t\\t\\t\\t((H)(L)) <- ((H)(L)) - \
+1\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,AC\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"DCR    M\\\");\\n\\t\\t\\tbreak;\
+\\n\\t\\tcase 0x03: // 00000011\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Increment \
+register pair>\\n\\t\\t\\t\\tINX rp\\n\\t\\t\\t\\t\\t(rh)(rl) <- (rh)(rl) + 1\
+\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"INX    \
+B\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x13: // 00010011\\n\\t\\t\\tprintf(\\\
+\"INX    D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x23: // \
+00100011\\n\\t\\t\\tprintf(\\\"INX    H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0x33: // 00110011\\n\\t\\t\\tprintf(\\\"INX    \
+SP\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x0b: // 00001011\\n\\t\\t\\t/*\\n\\t\
+\\t\\t\\t<Decrement register pair>\\n\\t\\t\\t\\tDCX \
+rp\\n\\t\\t\\t\\t\\t(rh)(rl) <- (rh)(rl) - 1\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\
+\\\"DCX    B\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x1b: // \
+00011011\\n\\t\\t\\tprintf(\\\"DCX    D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0x2b: // 00101011\\n\\t\\t\\tprintf(\\\"DCX    \
+H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x3b: // 00111011\\n\\t\\t\\tprintf(\\\
+\"DCX    SP\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x09: // \
+00001001\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Add register pair to H and \
+L>\\n\\t\\t\\t\\tDAD rp\\n\\t\\t\\t\\t\\t(H)(L) <- (H)(L) + (rh)(rl)\\n\\t\\t\
+\\t\\t\\n\\t\\t\\t\\tflags: CY\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"DAD    B\\\
+\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x19: // \
+00011001\\n\\t\\t\\tprintf(\\\"DAD    D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0x29: // 00101001\\n\\t\\t\\tprintf(\\\"DAD    \
+H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x39: // 00111001\\n\\t\\t\\tprintf(\\\
+\"DAD    SP\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x27: // \
+00100111\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Decimal adjust accumulator>\\n\\t\\t\\t\
+\\tDAA\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: Z,S,P,CY,AC\\n\\t\\t\\t\\tnote: \
+\\n\\t\\t\\t\\t\\t\\tThe eight-bit number in the accumulator is adjusted to \
+form two four-bit Binary-Coded-Decimal digits by the following process:\\n\\t\
+\\t\\t\\t\\t\\t\\t1. If the value of the least significant 4 bits of the \
+accumulator is greater than 9 or if the AC flag is set, 6 is added to the \
+accumulator.\\n\\t\\t\\t\\t\\t\\t\\t2. If the value of the most 4 bits of the \
+accumulator is now greater than 9, or if the CY flag is set, 6 is added to \
+the most significant 4 bits of the \
+accumulator.\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"DAA\\\");\\n\\t\\t\\tbreak;\\\
+n\\t\\tcase 0xa0: // 10100000\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<AND \
+register>\\n\\t\\t\\t\\tANA r\\n\\t\\t\\t\\t\\t(A) <- (A) & \
+(r)\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: Z,S,P,CY,AC\\n\\t\\t\\t\\tnote: The \
+CY flag is cleared.\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"ANA    \
+B\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xa1: // 10100001\\n\\t\\t\\tprintf(\\\
+\"ANA    C\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xa2: // \
+10100010\\n\\t\\t\\tprintf(\\\"ANA    D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0xa3: // 10100011\\n\\t\\t\\tprintf(\\\"ANA    \
+E\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xa4: // 10100100\\n\\t\\t\\tprintf(\\\
+\"ANA    H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xa5: // \
+10100101\\n\\t\\t\\tprintf(\\\"ANA    L\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0xa7: // 10100111\\n\\t\\t\\tprintf(\\\"ANA    \
+A\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xa6: // \
+10100110\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<AND memory>\\n\\t\\t\\t\\tANA \
+M\\n\\t\\t\\t\\t\\t(A) <- (A) & ((H)(L))\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,CY,AC\\n\\t\\t\\t\\tnote: The CY flag is \
+cleared.\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"ANA    M\\\");\\n\\t\\t\\tbreak;\
+\\n\\t\\tcase 0xe6: // 11100110\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<AND \
+immediate>\\n\\t\\t\\t\\tANI data\\n\\t\\t\\t\\t\\t(A) <- (A) & (byte2)\\n\\t\
+\\t\\t\\t\\n\\t\\t\\t\\tflags: Z,S,P,CY,AC\\n\\t\\t\\t\\tnote: The CY and AC \
+flags are cleared.\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"ANI    #0x%02x\\\", \
+code[1]);\\n\\t\\t\\topbytes = 2;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xa8: // \
+10101000\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Exclusive OR \
+register>\\n\\t\\t\\t\\tXRA r\\n\\t\\t\\t\\t\\t(A) <- (A) XOR (r)\\n\\t\\t\\t\
+\\t\\n\\t\\t\\t\\tflags: Z,S,P,CY,AC\\n\\t\\t\\t\\tnote: The CY and AC flags \
+are cleared.\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"XRA    \
+B\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xa9: // 10101001\\n\\t\\t\\tprintf(\\\
+\"XRA    C\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xaa: // \
+10101010\\n\\t\\t\\tprintf(\\\"XRA    D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0xab: // 10101011\\n\\t\\t\\tprintf(\\\"XRA    \
+E\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xac: // 10101100\\n\\t\\t\\tprintf(\\\
+\"XRA    H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xad: // \
+10101101\\n\\t\\t\\tprintf(\\\"XRA    L\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0xaf: // 10101111\\n\\t\\t\\tprintf(\\\"XRA    \
+A\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xae: // \
+10101110\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Exclusive OR memory>\\n\\t\\t\\t\\tXRA \
+M\\n\\t\\t\\t\\t\\t(A) <- (A) XOR \
+((H)(L))\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: Z,S,P,CY,AC\\n\\t\\t\\t\\tnote: \
+The CY and AC flags are cleared.\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"XRA    M\
+\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xee: // \
+11101110\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Exclusive OR \
+immediate>\\n\\t\\t\\t\\tXRI data\\n\\t\\t\\t\\t\\t(A) <- (A) XOR \
+(byte2)\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: Z,S,P,CY,AC\\n\\t\\t\\t\\tnote: \
+The CY and AC flags are cleared.\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"XRI    \
+#0x%02x\\\", code[1]);\\n\\t\\t\\topbytes = 2;\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0xb0: // 10110000\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<OR register>\\n\\t\\t\\t\\tORA \
+r\\n\\t\\t\\t\\t\\t(A) <- (A) OR (r)\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,CY,AC\\n\\t\\t\\t\\tnote: The CY and AC flags are \
+cleared.\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"ORA    B\\\");\\n\\t\\t\\tbreak;\
+\\n\\t\\tcase 0xb1: // 10110001\\n\\t\\t\\tprintf(\\\"ORA    C\\\");\\n\\t\\t\
+\\tbreak;\\n\\t\\tcase 0xb2: // 10110010\\n\\t\\t\\tprintf(\\\"ORA    D\\\");\
+\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xb3: // 10110011\\n\\t\\t\\tprintf(\\\"ORA   \
+ E\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xb4: // \
+10110100\\n\\t\\t\\tprintf(\\\"ORA    H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0xb5: // 10110101\\n\\t\\t\\tprintf(\\\"ORA    \
+L\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xb7: // 10110111\\n\\t\\t\\tprintf(\\\
+\"ORA    A\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xb6: // \
+10110110\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<OR memory>\\n\\t\\t\\t\\tORA M\\n\\t\\t\
+\\t\\t\\t(A) <- (A) OR ((H)(L))\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,CY,AC\\n\\t\\t\\t\\tnote: The CY and AC flags are \
+cleared.\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"ORA    M\\\");\\n\\t\\t\\tbreak;\
+\\n\\t\\tcase 0xf6: // 11110110\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<OR immediate>\\n\
+\\t\\t\\t\\tORI data\\n\\t\\t\\t\\t\\t(A) <- (A) OR (byte2)\\n\\t\\t\\t\\t\\n\
+\\t\\t\\t\\tflags: Z,S,P,CY,AC\\n\\t\\t\\t\\tnote: The CY and AC flags are \
+cleared.\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"ORI    #0x%02x\\\", code[1]);\\n\
+\\t\\t\\topbytes = 2;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xb8: // \
+10111000\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Compare register>\\n\\t\\t\\t\\tCMP \
+r\\n\\t\\t\\t\\t\\t(A) - (r)\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,CY,AC\\n\\t\\t\\t\\tnote: The Z flag is set to 1 if (A) = (r). The CY \
+flag is set to 1 if (A) < (r).\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"CMP    B\\\
+\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xb9: // \
+10111001\\n\\t\\t\\tprintf(\\\"CMP    C\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0xba: // 10111010\\n\\t\\t\\tprintf(\\\"CMP    \
+D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xbb: // 10111011\\n\\t\\t\\tprintf(\\\
+\"CMP    E\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xbc: // \
+10111100\\n\\t\\t\\tprintf(\\\"CMP    H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0xbd: // 10111101\\n\\t\\t\\tprintf(\\\"CMP    \
+L\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xbf: // 10111111\\n\\t\\t\\tprintf(\\\
+\"CMP    A\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xbe: // \
+10111110\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Compare memory>\\n\\t\\t\\t\\tCMP \
+M\\n\\t\\t\\t\\t\\t(A) - ((H)(L))\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,CY,AC\\n\\t\\t\\t\\tnote: The Z flag is set to 1 if (A) = ((H)(L)). The \
+CY flag is set to 1 if (A) < \
+((H)(L)).\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"CMP    \
+M\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xfe: // \
+11111110\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Compare immediate>\\n\\t\\t\\t\\tCPI \
+data\\n\\t\\t\\t\\t\\t(A) - (byte2)\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+Z,S,P,CY,AC\\n\\t\\t\\t\\tnote: The Z flag is set to 1 if (A) = (byte2). The \
+CY flag is set to 1 if (A) < (byte2).\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"CPI \
+   #0x%02x\\\", code[1]);\\n\\t\\t\\topbytes = \
+2;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x07: // 00000111\\n\\t\\t\\t/*\\n\\t\\t\\t\
+\\t<Rotate left>\\n\\t\\t\\t\\tRLC\\n\\t\\t\\t\\t\\t(A[n+1]) <- (A[n]); \
+(A[0]) <- (A[7])\\n\\t\\t\\t\\t\\t(CY) <- \
+(A[7])\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: \
+CY\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"RLC\\\");\\n\\t\\t\\tbreak;\\n\\t\\\
+tcase 0x0f: // 00001111\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Rotate \
+right>\\n\\t\\t\\t\\tRRC\\n\\t\\t\\t\\t\\t(A[n]) <- (A[n+1]); (A[7]) <- \
+(A[0])\\n\\t\\t\\t\\t\\t(CY) <- (A[0])\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: CY\
+\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"RRC\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0x17: // 00010111\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Rotate left through \
+carry>\\n\\t\\t\\t\\tRAL\\n\\t\\t\\t\\t\\t(A[n+1]) <- (A[n]); (CY) <- \
+(A[7])\\n\\t\\t\\t\\t\\t(A[0]) <- (CY)\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: CY\
+\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"RAL\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0x1f: // 00011111\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Rotate right through carry>\\n\
+\\t\\t\\t\\tRAR\\n\\t\\t\\t\\t\\t(A[n]) <- (A[n+1]); (CY) <- \
+(A[0])\\n\\t\\t\\t\\t\\t(A[7]) <- (CY)\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tflags: CY\
+\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"RAR\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0x2f: // 00101111\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Complement \
+accumulator>\\n\\t\\t\\t\\tCMA\\n\\t\\t\\t\\t\\t(A) <- (_A_)\\n\\t\\t\\t*/\\n\
+\\t\\t\\tprintf(\\\"CMA\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0x3f: // \
+00111111\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Complement \
+carry>\\n\\t\\t\\t\\tCMC\\n\\t\\t\\t\\t\\t(CY) <- \
+(_CY_)\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"CMC\\\");\\n\\t\\t\\tbreak;\\n\\t\\\
+tcase 0x37: // 00110111\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Set \
+carry>\\n\\t\\t\\t\\tSTC\\n\\t\\t\\t\\t\\t(CY) <- \
+1\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"STC\\\");\\n\\t\\t\\tbreak;\\n\\t\\\
+tcase 0xc3: // 11000011\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Jump>\\n\\t\\t\\t\\tJMP \
+addr\\n\\t\\t\\t\\t\\t(PC) <- (byte3)(byte2)\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\
+\\\"JMP    $%02x%02x\\\", code[2], code[1]);\\n\\t\\t\\topbytes = 3;\\n\\t\\t\
+\\tbreak;\\n\\t\\tcase 0xc2: // \
+11000010\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Conditional \
+jump>\\n\\t\\t\\t\\tJcondition addr\\n\\t\\t\\t\\t\\tIf (CCC), (PC) <- \
+(byte3)(byte2)\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"JNZ    $%02x%02x\\\", \
+code[2], code[1]);\\n\\t\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0xca: // 11001010\\n\\t\\t\\tprintf(\\\"JZ    $%02x%02x\\\", code[2], \
+code[1]);\\n\\t\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xd2: // \
+11010010\\n\\t\\t\\tprintf(\\\"JNC    $%02x%02x\\\", code[2], code[1]);\\n\\t\
+\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xda: // \
+11011010\\n\\t\\t\\tprintf(\\\"JC    $%02x%02x\\\", code[2], \
+code[1]);\\n\\t\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xe2: // \
+11100010\\n\\t\\t\\tprintf(\\\"JPO    $%02x%02x\\\", code[2], code[1]);\\n\\t\
+\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xea: // \
+11101010\\n\\t\\t\\tprintf(\\\"JPE    $%02x%02x\\\", code[2], code[1]);\\n\\t\
+\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xf2: // \
+11110010\\n\\t\\t\\tprintf(\\\"JP    $%02x%02x\\\", code[2], \
+code[1]);\\n\\t\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xfa: // \
+11111010\\n\\t\\t\\tprintf(\\\"JM    $%02x%02x\\\", code[2], \
+code[1]);\\n\\t\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xcd: // \
+11001101\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Call>\\n\\t\\t\\t\\tCALL \
+addr\\n\\t\\t\\t\\t\\t((SP) - 1) <- (PCH)\\n\\t\\t\\t\\t\\t((SP) - 2) <- \
+(PCL)\\n\\t\\t\\t\\t\\t(SP) <- (SP) - 2\\n\\t\\t\\t\\t\\t(PC) <- \
+(byte3)(byte2)\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"CALL   $%02x%02x\\\", \
+code[2], code[1]);\\n\\t\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0xc4: // 11000100\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Conditional \
+call>\\n\\t\\t\\t\\tCcondition addr\\n\\t\\t\\t\\t\\tIf (CCC), \
+\\n\\t\\t\\t\\t\\t((SP) - 1) <- (PCH)\\n\\t\\t\\t\\t\\t((SP) - 2) <- (PCL)\\n\
+\\t\\t\\t\\t\\t(SP) <- (SP) - 2\\n\\t\\t\\t\\t\\t(PC) <- (byte3)(byte2)\\n\\t\
+\\t\\t*/\\n\\t\\t\\tprintf(\\\"CNZ    $%02x%02x\\\", code[2], code[1]);\\n\\t\
+\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xcc: // \
+11001100\\n\\t\\t\\tprintf(\\\"CZ    $%02x%02x\\\", code[2], \
+code[1]);\\n\\t\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xd4: // \
+11010100\\n\\t\\t\\tprintf(\\\"CNC    $%02x%02x\\\", code[2], code[1]);\\n\\t\
+\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xdc: // \
+11011100\\n\\t\\t\\tprintf(\\\"CC    $%02x%02x\\\", code[2], \
+code[1]);\\n\\t\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xe4: // \
+11100100\\n\\t\\t\\tprintf(\\\"CPO    $%02x%02x\\\", code[2], code[1]);\\n\\t\
+\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xec: // \
+11101100\\n\\t\\t\\tprintf(\\\"CPE    $%02x%02x\\\", code[2], code[1]);\\n\\t\
+\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xf4: // \
+11110100\\n\\t\\t\\tprintf(\\\"CP    $%02x%02x\\\", code[2], \
+code[1]);\\n\\t\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xfc: // \
+11111100\\n\\t\\t\\tprintf(\\\"CM    $%02x%02x\\\", code[2], \
+code[1]);\\n\\t\\t\\topbytes = 3;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xc9: // \
+11001001\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Return>\\n\\t\\t\\t\\tRET\\n\\t\\t\\t\\\
+t\\t(PCL) <- ((SP))\\n\\t\\t\\t\\t\\t(PCH) <- ((SP) + \
+1)\\n\\t\\t\\t\\t\\t(SP) <- (SP) + \
+2\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"RET\\\");\\n\\t\\t\\tbreak;\\n\\t\\\
+tcase 0xc0: // 11000000\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Conditional \
+return>\\n\\t\\t\\t\\tRcondition\\n\\t\\t\\t\\t\\tIf (CCC), \
+\\n\\t\\t\\t\\t\\t(PCL) <- ((SP))\\n\\t\\t\\t\\t\\t(PCH) <- ((SP) + \
+1)\\n\\t\\t\\t\\t\\t(SP) <- (SP) + \
+2\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"RNZ\\\");\\n\\t\\t\\tbreak;\\n\\t\\\
+tcase 0xc8: // \
+11001000\\n\\t\\t\\tprintf(\\\"RZ\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xd0: \
+// 11010000\\n\\t\\t\\tprintf(\\\"RNC\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0xd8: // 11011000\\n\\t\\t\\tprintf(\\\"RC\\\");\\n\\t\\t\\tbreak;\\n\\t\\\
+tcase 0xe0: // \
+11100000\\n\\t\\t\\tprintf(\\\"RPO\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xe8: \
+// 11101000\\n\\t\\t\\tprintf(\\\"RPE\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0xf0: // 11110000\\n\\t\\t\\tprintf(\\\"RP\\\");\\n\\t\\t\\tbreak;\\n\\t\\\
+tcase 0xf8: // \
+11111000\\n\\t\\t\\tprintf(\\\"RM\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xc7: \
+// 11000111\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Restart>\\n\\t\\t\\t\\tRST \
+n\\n\\t\\t\\t\\t\\t((SP) - 1) <- (PCH)\\n\\t\\t\\t\\t\\t((SP) - 2) <- \
+(PCL)\\n\\t\\t\\t\\t\\t(SP) <- (SP) - 2\\n\\t\\t\\t\\t\\t(PC) <- \
+8*(NNN)\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"RST    \
+0\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xcf: // 11001111\\n\\t\\t\\tprintf(\\\
+\"RST    1\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xd7: // \
+11010111\\n\\t\\t\\tprintf(\\\"RST    2\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0xdf: // 11011111\\n\\t\\t\\tprintf(\\\"RST    \
+3\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xe7: // 11100111\\n\\t\\t\\tprintf(\\\
+\"RST    4\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xef: // \
+11101111\\n\\t\\t\\tprintf(\\\"RST    5\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0xf7: // 11110111\\n\\t\\t\\tprintf(\\\"RST    \
+6\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xff: // 11111111\\n\\t\\t\\tprintf(\\\
+\"RST    7\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xe9: // \
+11101001\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Jump H and L indirect - move H and L to \
+PC>\\n\\t\\t\\t\\tPCHL\\n\\t\\t\\t\\t\\t(PCH) <- (H)\\n\\t\\t\\t\\t\\t(PCL) \
+<- (L)\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"PCHL\\\");\\n\\t\\t\\tbreak;\\n\\t\
+\\tcase 0xc5: // \
+11000101\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Push>\\n\\t\\t\\t\\tPUSH rp\\n\\t\\t\\t\
+\\t\\t((SP) - 1) <- (rh)\\n\\t\\t\\t\\t\\t((SP) - 2) <- \
+(rl)\\n\\t\\t\\t\\t\\t(SP) <- (SP) - 2\\n\\t\\t\\t\\tnote: Register pair rp = \
+SP may not be specified.\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"PUSH   \
+B\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xd5: // 11010101\\n\\t\\t\\tprintf(\\\
+\"PUSH   D\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xe5: // \
+11100101\\n\\t\\t\\tprintf(\\\"PUSH   H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase \
+0xf5: // 11110101\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Push processor status word>\\n\
+\\t\\t\\t\\tPUSH PSW\\n\\t\\t\\t\\t\\t((SP) - 1) <- \
+(A)\\n\\t\\t\\t\\t\\t((SP) - 2)[0] <- (CY), ((SP) - 2)[1] <- 1\\n\\t\\t\\t\\t\
+\\t((SP) - 2)[2] <- (P), ((SP) - 2)[3] <- 0\\n\\t\\t\\t\\t\\t((SP) - 2)[4] <- \
+(AC), ((SP) - 2)[5] <- 0\\n\\t\\t\\t\\t\\t((SP) - 2)[6] <- (Z), ((SP) - 2)[7] \
+<- (S)\\n\\t\\t\\t\\t\\t(SP) <- (SP) - \
+2\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"PUSH   \
+PSW\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xc1: // \
+11000001\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Pop>\\n\\t\\t\\t\\tPOP \
+rp\\n\\t\\t\\t\\t\\t(rh) <- ((SP) + 1)\\n\\t\\t\\t\\t\\t(rl) <- ((SP) + 2)\\n\
+\\t\\t\\t\\t\\t(SP) <- (SP) + 2\\n\\t\\t\\t\\tnote: Register pair rp = SP may \
+not be specified.\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"POP    B\\\");\\n\\t\\t\
+\\tbreak;\\n\\t\\tcase 0xd1: // 11010001\\n\\t\\t\\tprintf(\\\"POP    D\\\");\
+\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xe1: // 11100001\\n\\t\\t\\tprintf(\\\"POP   \
+ H\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xf1: // 11110001\\n\\t\\t\\t/*\\n\\t\
+\\t\\t\\t<Pop processor status word>\\n\\t\\t\\t\\tPOP \
+PSW\\n\\t\\t\\t\\t\\t(CY) <- ((SP))[0]\\n\\t\\t\\t\\t\\t(P) <- \
+((SP))[2]\\n\\t\\t\\t\\t\\t(AC) <- ((SP))[4]\\n\\t\\t\\t\\t\\t(Z) <- \
+((SP))[6]\\n\\t\\t\\t\\t\\t(S) <- ((SP))[7]\\n\\t\\t\\t\\t\\t(A) <- ((SP) + \
+1)\\n\\t\\t\\t\\t\\t(SP) <- (SP) + 2\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"POP  \
+  PSW\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xe3: // 11100011\\n\\t\\t\\t/*\\n\
+\\t\\t\\t\\t<Exchange stack top with H and \
+L>\\n\\t\\t\\t\\tXTHL\\n\\t\\t\\t\\t\\t(L) <-> ((SP))\\n\\t\\t\\t\\t\\t(H) \
+<-> ((SP) + \
+1)\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"XTHL\\\");\\n\\t\\t\\tbreak;\\n\\t\\\
+tcase 0xf9: // 11111001\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Move HL to \
+SP>\\n\\t\\t\\t\\tSPHL\\n\\t\\t\\t\\t\\t(SP) <- (H)(L)\\n\\t\\t\\t*/\\n\\t\\t\
+\\tprintf(\\\"SPHL\\\");\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xdb: // \
+11011011\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Input>\\n\\t\\t\\t\\tIN \
+port\\n\\t\\t\\t\\t\\t(A) <- (data)\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"IN    \
+ #0x%02x\\\", code[1]);\\n\\t\\t\\topbytes = \
+2;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xd3: // 11010011\\n\\t\\t\\t/*\\n\\t\\t\\t\
+\\t<Output>\\n\\t\\t\\t\\tOUT port\\n\\t\\t\\t\\t\\t(data) <- \
+(A)\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"OUT    #0x%02x\\\", \
+code[1]);\\n\\t\\t\\topbytes = 2;\\n\\t\\t\\tbreak;\\n\\t\\tcase 0xfb: // \
+11111011\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Enable \
+interrupts>\\n\\t\\t\\t\\tEI\\n\\t\\t\\t\\tnote: The interrupt system is \
+enabled following the execution of the next \
+instruction.\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"EI\\\");\\n\\t\\t\\tbreak;\\\
+n\\t\\tcase 0xf3: // 11110011\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Disable \
+interrupts>\\n\\t\\t\\t\\tDI\\n\\t\\t\\t\\tnote: The interrupt system is \
+disabled immediately following the execution of the DI \
+instruction.\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"DI\\\");\\n\\t\\t\\tbreak;\\\
+n\\t\\tcase 0x76: // \
+01110110\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<Halt>\\n\\t\\t\\t\\tHLT\\n\\t\\t\\t\\\
+tnote: The processor is stopped. The registers and flags are \
+unnafected.\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"HLT\\\");\\n\\t\\t\\tbreak;\\\
+n\\t\\tcase 0x00: // 00000000\\n\\t\\t\\t/*\\n\\t\\t\\t\\t<No op>\\n\\t\\t\\t\
+\\tNOP\\n\\t\\t\\t\\tnote: No operation is performed. The registers and flags \
+are unnafected.\\n\\t\\t\\t*/\\n\\t\\t\\tprintf(\\\"NOP\\\");\\n\\t\\t\\\
+tbreak;\\n\\t\\tcase 0x08: // 00001000\\n\\t\\tcase 0x10: // \
+00010000\\n\\t\\tcase 0x18: // 00011000\\n\\t\\tcase 0x20: // \
+00100000\\n\\t\\tcase 0x28: // 00101000\\n\\t\\tcase 0x30: // \
+00110000\\n\\t\\tcase 0x38: // 00111000\\n\\t\\tcase 0xcb: // \
+11001011\\n\\t\\tcase 0xd9: // 11011001\\n\\t\\tcase 0xdd: // \
+11011101\\n\\t\\tcase 0xed: // 11101101\\n\\t\\tcase 0xfd: // 11111101\"\>"], \
+"Output",
  CellChangeTimes->{{3.785436239407366*^9, 3.7854362627239933`*^9}, 
    3.785436306014975*^9, {3.785436931062055*^9, 3.785436947837476*^9}, 
    3.7854370438867607`*^9, 3.7854371755633593`*^9, {3.785437223560893*^9, 
@@ -4177,9 +4096,10 @@ B,B\\\");\\n\\t\\t\\t\\tbreak;\"\>"], "Output",
    3.785452212879376*^9, 3.785452357299288*^9, 3.785452526584577*^9, 
    3.7854526027239847`*^9, 3.785452685407775*^9, 3.7854527313889923`*^9, 
    3.7854527963131313`*^9, 3.78545284935107*^9, 3.785452927619315*^9, 
-   3.785453135028294*^9, 3.7854531848364487`*^9},
+   3.785453135028294*^9, 3.7854531848364487`*^9, 3.7854532453085613`*^9, {
+   3.785453390513101*^9, 3.7854534238414383`*^9}, 3.785453470001524*^9},
  CellLabel->
-  "Out[3892]=",ExpressionUUID->"a416a680-62a4-4c03-935b-a1d02cbed34c"]
+  "Out[102]=",ExpressionUUID->"7b8c3a10-7a4e-4291-87b8-83a4c2452c35"]
 }, Open  ]],
 
 Cell[BoxData["\t"], "Input",
@@ -4208,27 +4128,27 @@ Cell[CellGroupData[{
 Cell[583, 22, 1003, 22, 155, "Input",ExpressionUUID->"fc6ff9ce-51e3-4537-8110-c903f790af52"],
 Cell[1589, 46, 22595, 388, 26923, "Output",ExpressionUUID->"46609712-b4cf-4657-9923-ed981f1e67f5"]
 }, Closed]],
-Cell[24199, 437, 1237, 38, 347, "Input",ExpressionUUID->"cdb41e9b-91e2-4c62-bfcd-22d0c63c67f5"],
-Cell[25439, 477, 801, 23, 216, "Input",ExpressionUUID->"3a196786-83bf-44af-b936-a12e21cdc1d6"],
-Cell[26243, 502, 1305, 41, 378, "Input",ExpressionUUID->"d0f225eb-44fd-4a6e-a097-5b64091d9d86"],
+Cell[24199, 437, 1236, 38, 347, "Input",ExpressionUUID->"cdb41e9b-91e2-4c62-bfcd-22d0c63c67f5"],
+Cell[25438, 477, 801, 23, 216, "Input",ExpressionUUID->"3a196786-83bf-44af-b936-a12e21cdc1d6"],
+Cell[26242, 502, 1300, 40, 356, "Input",ExpressionUUID->"d0f225eb-44fd-4a6e-a097-5b64091d9d86"],
 Cell[CellGroupData[{
-Cell[27573, 547, 333, 8, 49, "Input",ExpressionUUID->"284d256e-2c2f-4f3b-94b4-07f13e82a282"],
-Cell[27909, 557, 183, 2, 77, "Output",ExpressionUUID->"30a570b0-1a52-49e2-9421-e82f5771c7dd"]
+Cell[27567, 546, 333, 8, 49, "Input",ExpressionUUID->"284d256e-2c2f-4f3b-94b4-07f13e82a282"],
+Cell[27903, 556, 183, 2, 55, "Output",ExpressionUUID->"30a570b0-1a52-49e2-9421-e82f5771c7dd"]
 }, Open  ]],
-Cell[28107, 562, 104978, 2640, 21623, "Input",ExpressionUUID->"83d568c8-fa63-45ad-b753-ae44920f4ad6"],
+Cell[28101, 561, 104973, 2639, 21601, "Input",ExpressionUUID->"83d568c8-fa63-45ad-b753-ae44920f4ad6"],
 Cell[CellGroupData[{
-Cell[133110, 3206, 1981, 32, 71, "Input",ExpressionUUID->"0487e8f3-556f-4734-9ca2-98566d8f7e17"],
-Cell[135094, 3240, 1649, 24, 77, "Output",ExpressionUUID->"33e4fca8-0b69-417f-9689-d7cbb77a6517"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[136780, 3269, 428, 10, 71, "Input",ExpressionUUID->"eb2f7428-504b-4a17-952a-fa4a9f0e6540"],
-Cell[137211, 3281, 878, 19, 113, "Output",ExpressionUUID->"c4eb6a94-dbdc-4890-b9e2-8db914e433bb"]
+Cell[133099, 3204, 1981, 32, 49, "Input",ExpressionUUID->"0487e8f3-556f-4734-9ca2-98566d8f7e17"],
+Cell[135083, 3238, 1649, 24, 55, "Output",ExpressionUUID->"33e4fca8-0b69-417f-9689-d7cbb77a6517"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[138126, 3305, 9594, 183, 903, "Input",ExpressionUUID->"1c9324da-1d6d-4a12-a862-1463a88cad52"],
-Cell[147723, 3490, 43387, 691, 44703, "Output",ExpressionUUID->"a416a680-62a4-4c03-935b-a1d02cbed34c"]
+Cell[136769, 3267, 428, 10, 49, "Input",ExpressionUUID->"eb2f7428-504b-4a17-952a-fa4a9f0e6540"],
+Cell[137200, 3279, 878, 19, 91, "Output",ExpressionUUID->"c4eb6a94-dbdc-4890-b9e2-8db914e433bb"]
 }, Open  ]],
-Cell[191125, 4184, 130, 3, 48, "Input",ExpressionUUID->"3fda54b0-0ea6-4c66-8c82-5b909d340b4e"]
+Cell[CellGroupData[{
+Cell[138115, 3303, 9708, 185, 903, "Input",ExpressionUUID->"1c9324da-1d6d-4a12-a862-1463a88cad52"],
+Cell[147826, 3490, 40280, 611, 44703, "Output",ExpressionUUID->"7b8c3a10-7a4e-4291-87b8-83a4c2452c35"]
+}, Open  ]],
+Cell[188121, 4104, 130, 3, 48, "Input",ExpressionUUID->"3fda54b0-0ea6-4c66-8c82-5b909d340b4e"]
 }
 ]
 *)
