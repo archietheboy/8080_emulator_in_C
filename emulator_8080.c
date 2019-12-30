@@ -34,17 +34,23 @@ void unassigned_instruction(struct State8080 *state)
 	exit(EXIT_FAILURE);
 }
 
+uint8_t combine_two_8bit(uint8_t byte1, uint8_t byte2)
+{
+	return (byte2 << 8) | (byte1 & 0xff);
+}
+
 int emulate_8080(struct State8080 *state)
 {
 	uint8_t *state_mem = state->memory;
 	unsigned char *opcode = &state_mem[state->pc];	// '->' has higher precedence than '&'
 
-	switch (opcode)
+	switch (*opcode)
 	{
+		// NOP
 		case 0x00:
 			break;
 
-		// LXI
+		// LXI rp,data16
 		case 0x01:
 			state->b = opcode[2];
 			state->c = opcode[1];
@@ -60,11 +66,11 @@ int emulate_8080(struct State8080 *state)
 			state->l = opcode[1];
 			state->pc+=2;
 		case 0x31:
-			state->sp = (opcode[2] << 8) | opcode[1];
+			state->sp = combine_two_8bit(opcode[1], opcode[2]);
 			state->pc+=2;
 			break;
 		
-		// MOV
+		// MOV r1,r2
 		case 0x40:
 			break;
 		case 0x41:
@@ -201,12 +207,125 @@ int emulate_8080(struct State8080 *state)
 			break;
 		case 0x7d:
 			state->a = state->l;
+			break;
 		case 0x7f:
 			break;
+		
+		// MOV r,M
 		case 0x46:
-			state->b = state_mem[(state->h) << 8 | state->l];
+			state->b = state_mem[combine_two_8bit(state->l, state->h)];
+			break;	
+		case 0x4e:
+			state->c = state_mem[combine_two_8bit(state->l, state->h)];
+			break;
+		case 0x56:
+			state->d = state_mem[combine_two_8bit(state->l, state->h)];
+			break;
+		case 0x5e:
+			state->e = state_mem[combine_two_8bit(state->l, state->h)];
+			break;
+		case 0x66:
+			state->h = state_mem[combine_two_8bit(state->l, state->h)];
+			break;
+		case 0x6e:
+			state->l = state_mem[combine_two_8bit(state->l, state->h)];
+			break;
+		case 0x76:
+			break;
+		case 0x7e:
+			state->a = state_mem[combine_two_8bit(state->l, state->h)];
+			break;
+		
+		// MOV M,r
+		case 0x70:
+			state_mem[combine_two_8bit(state->l, state->h)] = state->b;
+			break;
+		case 0x71:
+			state_mem[combine_two_8bit(state->l, state->h)] = state->c;
+			break;
+		case 0x72:
+			state_mem[combine_two_8bit(state->l, state->h)] = state->d;
+			break;
+		case 0x73:
+			state_mem[combine_two_8bit(state->l, state->h)] = state->e;
+			break;
+		case 0x74:
+			state_mem[combine_two_8bit(state->l, state->h)] = state->h;
+			break;
+		case 0x75:
+			state_mem[combine_two_8bit(state->l, state->h)] = state->l;
+			break;
+		case 0x77:
+			state_mem[combine_two_8bit(state->l, state->h)] = state->a;
 			break;
 
+		// MVI r,data
+		case 0x06:
+			state->b = opcode[1];
+			break;
+		case 0x0e:
+			state->c = opcode[1];
+			break;
+		case 0x16:
+			state->d = opcode[1];
+			break;
+		case 0x1e:
+			state->e = opcode[1];
+			break;
+		case 0x26:
+			state->h = opcode[1];
+			break;
+		case 0x2e:
+			state->l = opcode[1];
+			break;
+		case 0x3e:
+			state->a = opcode[1];
+			break;
+
+		// MVI M,data
+		case 0x36:	
+			state_mem[combine_two_8bit(state->l, state->h)] = opcode[1];
+			break;
+		
+		// LDA addr
+		case 0x3a:
+			state->a = state_mem[combine_two_8bit(opcode[1], opcode[2])];
+			break;
+		
+		// STA addr
+		case 0x32:
+			state_mem[combine_two_8bit(opcode[1], opcode[2])] = state->a;
+			break;
+		
+		// LHLD addr
+		case 0x2a:
+			state->l = state_mem[combine_two_8bit(opcode[1], opcode[2])];
+			state->h = state_mem[combine_two_8bit(opcode[1], opcode[2]) + 1];
+			break;
+		
+		// SHLD addr
+		case 0x22:
+			state_mem[combine_two_8bit(opcode[1], opcode[2])] = state->l;
+			state_mem[combine_two_8bit(opcode[1], opcode[2]) + 1] = state->h;
+			break;
+
+		// LDAX rp
+		case 0x0a:
+			state->a = state_mem[combine_two_8bit(state->c, state->b)];
+			break;
+		case 0x1a:
+			state->a = state_mem[combine_two_8bit(state->e, state->d)];
+			break;			
+
+		// XCHG
+		case 0xeb:
+			state->h = state->d;
+			state->l = state->e;
+
+		// ADD r
+		case 0x80:
+			// do the math with higher precision so we can capture the carry out    
+			uint16_t answer = 
 
 		default:
 			break;
