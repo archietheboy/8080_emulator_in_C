@@ -39,6 +39,21 @@ uint8_t combine_two_8bit(uint8_t byte1, uint8_t byte2)
 	return (byte2 << 8) | (byte1 & 0xff);
 }
 
+uint8_t byte_parity(uint8_t byte)
+{
+	uint8_t count = 0;
+	uint8_t sbyte = byte;
+	while( sbyte )
+	{
+		if((sbyte & 0x1) == 1)
+		{
+			count++;
+		}
+		sbyte = sbyte >> 1;
+	}
+	return count;
+}
+
 int emulate_8080(struct State8080 *state)
 {
 	uint8_t *state_mem = state->memory;
@@ -324,8 +339,16 @@ int emulate_8080(struct State8080 *state)
 
 		// ADD r
 		case 0x80:
-			// do the math with higher precision so we can capture the carry out    
-			uint16_t answer = 
+			{
+				// do the math with higher precision so we can capture the carry out
+				uint16_t answer = (uint16_t)state->a + (uint16_t)state->b;
+				state->cf.z = ((answer & 0xff) == 0);
+				state->cf.cy = (answer > 0xff);
+				state->cf.s = ((answer & 0x80) == 0);
+				state->cf.p = byte_parity( answer & 0xff );
+				state->cf.ac = (((state->a) & 0xf) + ((state->b) & 0xf) > 0xf);
+			}
+			break;
 
 		default:
 			break;
