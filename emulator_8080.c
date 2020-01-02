@@ -36,7 +36,7 @@ void unassigned_instruction(struct State8080 *state)
 
 uint8_t combine_two_8bit(uint8_t byte1, uint8_t byte2)
 {
-	return (byte2 << 8) | (byte1 & 0xff);
+	return (byte2 << 8) | byte1;
 }
 
 uint8_t byte_parity(uint8_t byte)
@@ -53,6 +53,47 @@ uint8_t byte_parity(uint8_t byte)
 	}
 	return count;
 }
+
+void add_8080(struct State8080 *state, uint8_t reg, uint8_t carry)
+{
+	// do the math with higher precision so we can capture the carry out
+	uint16_t result = (uint16_t)state->a + (uint16_t)reg;
+	uint8_t auxiliary = ((state->a) & 0xf) + (reg & 0xf);
+	if ( carry )
+	{
+		result += state->cf.cy;
+		auxiliary += state->cf.cy;
+	}
+	// relational operators are not garanteed to return 1 (?)
+	// does not matter since the flags are bit sized
+	state->cf.z = ((result & 0xff) == 0);
+	state->cf.cy = (result > 0xff);
+	state->cf.s = ((result & 0x80) == 0);
+	state->cf.p = byte_parity( result & 0xff );
+	state->cf.ac = (auxiliary > 0xf);
+	state->a = result & 0xff;
+}
+
+void sub_8080(struct State8080 *state, uint8_t reg, uint8_t carry)
+{
+	// do the math with higher precision so we can capture the carry out
+	uint16_t result = (uint16_t)state->a - (uint16_t)reg;
+	uint8_t auxiliary = ((state->a) & 0xf) - (reg & 0xf);
+	if ( carry )
+	{
+		result -= state->cf.cy;
+		auxiliary -= state->cf.cy;
+	}
+	// relational operators are not garanteed to return 1 (?)
+	// does not matter since the flags are bit sized
+	state->cf.z = ((result & 0xff) == 0);
+	state->cf.cy = (result > 0xff);
+	state->cf.s = ((result & 0x80) == 0);
+	state->cf.p = byte_parity( result & 0xff );
+	state->cf.ac = (auxiliary > 0xf);
+	state->a = result & 0xff;
+}
+
 
 int emulate_8080(struct State8080 *state)
 {
@@ -339,21 +380,141 @@ int emulate_8080(struct State8080 *state)
 
 		// ADD r
 		case 0x80:
-			{
-				// do the math with higher precision so we can capture the carry out
-				uint16_t answer = (uint16_t)state->a + (uint16_t)state->b;
-				state->cf.z = ((answer & 0xff) == 0);
-				state->cf.cy = (answer > 0xff);
-				state->cf.s = ((answer & 0x80) == 0);
-				state->cf.p = byte_parity( answer & 0xff );
-				state->cf.ac = (((state->a) & 0xf) + ((state->b) & 0xf) > 0xf);
-			}
+			add_8080(state, state->b, 0);
+			break;
+		case 0x81:
+			add_8080(state, state->c, 0);
+			break;
+		case 0x82:
+			add_8080(state, state->d, 0);
+			break;
+		case 0x83:
+			add_8080(state, state->e, 0);
+			break;
+		case 0x84:
+			add_8080(state, state->h, 0);
+			break;
+		case 0x85:
+			add_8080(state, state->l, 0);
+			break;
+		case 0x87:
+			add_8080(state, state->a, 0);
+			break;
+
+		// ADD M
+		case 0x86:
+			add_8080(state, state_mem[combine_two_8bit(state->l, state->h)], 0);
+			break;
+
+		// ADI data
+		case 0xc6:
+			add_8080(state, opcode[1], 0);
+			break;
+
+		// ADC r
+		case 0x88:
+			add_8080(state, state->b, 1);
+			break;
+		case 0x89:
+			add_8080(state, state->c, 1);
+			break;
+		case 0x8a:
+			add_8080(state, state->d, 1);
+			break;
+		case 0x8b:
+			add_8080(state, state->e, 1);
+			break;
+		case 0x8c:
+			add_8080(state, state->h, 1);
+			break;
+		case 0x8d:
+			add_8080(state, state->l, 1);
+			break;
+		case 0x8f:
+			add_8080(state, state->a, 1);
+			break;
+
+		// ADC M
+		case 0x8e:
+			add_8080(state, state_mem[combine_two_8bit(state->l, state->h)], 1);
+			break;
+
+		// ACI data
+		case 0xce:
+			add_8080(state, opcode[1], 1);
+			break;
+
+		// SUB r
+		case 0x90:
+			sub_8080(state, state->b, 0);
+			break;
+		case 0x91:
+			sub_8080(state, state->c, 0);
+			break;
+		case 0x92:
+			sub_8080(state, state->d, 0);
+			break;
+		case 0x93:
+			sub_8080(state, state->e, 0);
+			break;
+		case 0x94:
+			sub_8080(state, state->h, 0);
+			break;
+		case 0x95:
+			sub_8080(state, state->l, 0);
+			break;
+		case 0x97:
+			sub_8080(state, state->a, 0);
+			break;
+
+		// SUB M
+		case 0x96:
+			sub_8080(state, state_mem[combine_two_8bit(state->l, state->h)], 0);
+			break;
+
+		// SUI data
+		case 0xd6:
+			sub_8080(state, opcode[1], 0);
+			break;
+
+		// SBB r
+		case 0x98:
+			sub_8080(state, state->b, 1);
+			break;
+		case 0x99:
+			sub_8080(state, state->c, 1);
+			break;
+		case 0x9a:
+			sub_8080(state, state->d, 1);
+			break;
+		case 0x9b:
+			sub_8080(state, state->e, 1);
+			break;
+		case 0x9c:
+			sub_8080(state, state->h, 1);
+			break;
+		case 0x9d:
+			sub_8080(state, state->l, 1);
+			break;
+		case 0x9f:
+			sub_8080(state, state->a, 1);
+			break;
+
+		// SBB M
+		case 0x9e:
+			sub_8080(state, state_mem[combine_two_8bit(state->l, state->h)], 1);
+			break;
+
+		// SUI data
+		case 0xde:
+			sub_8080(state, opcode[1], 1);
 			break;
 
 		default:
 			break;
 	}
 	state->pc++;
+	return 0;
 }
 
 int main(int argc, char **argv)
