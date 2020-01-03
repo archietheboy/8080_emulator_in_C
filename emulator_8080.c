@@ -94,6 +94,91 @@ void sub_8080(struct State8080 *state, uint8_t reg, uint8_t carry)
 	state->a = result & 0xff;
 }
 
+void inr_8080(struct State8080 *state, uint8_t *reg)
+{
+	uint8_t res = *reg;
+	res += 1;
+	state->cf.z = (res == 0);
+	state->cf.s = ((res & 0x80) == 0);
+	state->cf.p = byte_parity( res );
+	state->cf.ac = ((*reg & 0xf) == 0xf);
+	*reg = res;
+}
+
+void dcr_8080(struct State8080 *state, uint8_t *reg)
+{
+	uint8_t res = *reg;
+	res -= 1;
+	state->cf.z = (res == 0);
+	state->cf.s = ((res & 0x80) == 0);
+	state->cf.p = byte_parity( res );
+	state->cf.ac = ((*reg & 0xf) == 0);
+	*reg = res;
+}
+
+void inx_8080(struct State8080 *state, uint8_t pair)
+{
+	uint16_t pair_mem;
+	switch ( pair )
+	{
+		case 0x0:
+			pair_mem = combine_two_8bit(state->c, state->b);
+			pair_mem++;
+			state->c = pair_mem & 0xff;
+			state->b = (pair_mem >> 8) & 0xff;
+			break;
+		case 0x1:
+			pair_mem = combine_two_8bit(state->e, state->d);
+			pair_mem++;
+			state->e = pair_mem & 0xff;
+			state->d = (pair_mem >> 8) & 0xff;
+			break;
+		case 0x2:
+			pair_mem = combine_two_8bit(state->l, state->h);
+			pair_mem++;
+			state->l = pair_mem & 0xff;
+			state->h = (pair_mem >> 8) & 0xff;
+			break;
+		case 0x3:
+			state->sp++;
+			break;
+		default:
+			printf("$Failed\n");
+			break;
+	}
+}
+
+void dcx_8080(struct State8080 *state, uint8_t pair)
+{
+	uint16_t pair_mem;
+	switch ( pair )
+	{
+		case 0x0:
+			pair_mem = combine_two_8bit(state->c, state->b);
+			pair_mem--;
+			state->c = pair_mem & 0xff;
+			state->b = (pair_mem >> 8) & 0xff;
+			break;
+		case 0x1:
+			pair_mem = combine_two_8bit(state->e, state->d);
+			pair_mem--;
+			state->e = pair_mem & 0xff;
+			state->d = (pair_mem >> 8) & 0xff;
+			break;
+		case 0x2:
+			pair_mem = combine_two_8bit(state->l, state->h);
+			pair_mem--;
+			state->h = pair_mem & 0xff;
+			state->l = (pair_mem >> 8) & 0xff;
+			break;
+		case 0x3:
+			state->sp--;
+			break;
+		default:
+			printf("$Failed\n");
+			break;
+	}
+}
 
 int emulate_8080(struct State8080 *state)
 {
@@ -505,9 +590,93 @@ int emulate_8080(struct State8080 *state)
 			sub_8080(state, state_mem[combine_two_8bit(state->l, state->h)], 1);
 			break;
 
-		// SUI data
+		// SBI data
 		case 0xde:
 			sub_8080(state, opcode[1], 1);
+			break;
+
+		// INR r
+		case 0x04:
+			inr_8080(state, &state->b);
+			break;
+		case 0x0c:
+			inr_8080(state, &state->c);
+			break;
+		case 0x14:
+			inr_8080(state, &state->d);
+			break;
+		case 0x1c:
+			inr_8080(state, &state->e);
+			break;
+		case 0x24:
+			inr_8080(state, &state->h);
+			break;
+		case 0x2c:
+			inr_8080(state, &state->l);
+			break;
+		case 0x3c:
+			inr_8080(state, &state->a);
+			break;
+
+		// INR M
+		case 0x34:
+			inr_8080(state, &state_mem[combine_two_8bit(state->l, state->h)]);
+			break;
+
+		// DCR r
+		case 0x05:
+			dcr_8080(state, &state->b);
+			break;
+		case 0x0d:
+			dcr_8080(state, &state->c);
+			break;
+		case 0x15:
+			dcr_8080(state, &state->d);
+			break;
+		case 0x1d:
+			dcr_8080(state, &state->e);
+			break;
+		case 0x25:
+			dcr_8080(state, &state->h);
+			break;
+		case 0x2d:
+			dcr_8080(state, &state->l);
+			break;
+		case 0x3d:
+			dcr_8080(state, &state->a);
+			break;
+
+		// DCR M
+		case 0x35:
+			dcr_8080(state, &state_mem[combine_two_8bit(state->l, state->h)]);
+			break;
+
+		// INX r
+		case 0x03:
+			inx_8080(state, 0);
+			break;
+		case 0x13:
+			inx_8080(state, 1);
+			break;
+		case 0x23:
+			inx_8080(state, 2);
+			break;
+		case 0x33:
+			inx_8080(state, 3);
+			break;
+
+		// DCX r
+		case 0x0b:
+			dcx_8080(state, 0);
+			break;
+		case 0x1b:
+			dcx_8080(state, 1);
+			break;
+		case 0x2b:
+			dcx_8080(state, 2);
+			break;
+		case 0x3b:
+			dcx_8080(state, 3);
 			break;
 
 		default:
