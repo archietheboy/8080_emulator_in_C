@@ -180,6 +180,32 @@ void dcx_8080(struct State8080 *state, uint8_t pair)
 	}
 }
 
+void dad_8080(struct State8080 *state, uint8_t pair)
+{
+	uint32_t res = (uint32_t)combine_two_8bit(state->l, state->h);
+	switch ( pair )
+	{
+		case 0x0:
+			res += (uint32_t)combine_two_8bit(state->c, state->b);
+			break;
+		case 0x1:
+			res += (uint32_t)combine_two_8bit(state->e, state->d);
+			break;
+		case 0x2:
+			res += (uint32_t)combine_two_8bit(state->l, state->h);
+			break;
+		case 0x3:
+			res += (uint32_t)state->sp;
+			break;
+		default:
+			printf("$Failed\n");
+			break;
+	}
+	state->cf.cy = (res > 0xffff);
+	state->l = (res & 0xff);
+	state->h = (res >> 8) & 0xff;
+}
+
 int emulate_8080(struct State8080 *state)
 {
 	uint8_t *state_mem = state->memory;
@@ -677,6 +703,37 @@ int emulate_8080(struct State8080 *state)
 			break;
 		case 0x3b:
 			dcx_8080(state, 3);
+			break;
+
+		// DAD rp
+		case 0x09:
+			dad_8080(state, 0);
+			break;
+		case 0x19:
+			dad_8080(state, 1);
+			break;
+		case 0x29:
+			dad_8080(state, 2);
+			break;
+		case 0x39:
+			dad_8080(state, 3);
+			break;
+
+		// DAA
+		case 0x27:
+			if ( ((state->a & 0xf) > 9) || state->cf.ac)
+			{
+				state->cf.ac = 1;
+				state->a += 6;
+			}
+			if ( ((state->a  & 0xf0) > 0x90) || state->cf.cy)
+			{
+				state->cf.cy = 1;
+				state->a = ((state->a & 0xf0) + 0x60) | (state->a & 0xf);
+			}
+			state->cf.s = ((state->a & 0x80) == 0);
+			state->cf.p = byte_parity( state->a );
+			state->cf.z = (state->a == 0);
 			break;
 
 		default:
