@@ -206,6 +206,45 @@ void dad_8080(struct State8080 *state, uint8_t pair)
 	state->h = (res >> 8) & 0xff;
 }
 
+void and_8080(struct State8080 *state, uint8_t reg)
+{
+	state->a &= reg;
+	state->cf.cy = 0;
+	state->cf.z = ((state->a & 0xff) == 0);
+	state->cf.s = ((state->a & 0x80) == 0);
+	state->cf.p = byte_parity(state->a);
+}
+
+void xor_8080(struct State8080 *state, uint8_t reg)
+{
+	state->a ^= reg;
+	state->cf.cy = 0;
+	state->cf.ac = 0;
+	state->cf.z = ((state->a & 0xff) == 0);
+	state->cf.s = ((state->a & 0x80) == 0);
+	state->cf.p = byte_parity(state->a);
+}
+
+void or_8080(struct State8080 *state, uint8_t reg)
+{
+	state->a |= reg;
+	state->cf.cy = 0;
+	state->cf.ac = 0;
+	state->cf.z = ((state->a & 0xff) == 0);
+	state->cf.s = ((state->a & 0x80) == 0);
+	state->cf.p = byte_parity(state->a);
+}
+
+void cmp_8080(struct State8080 *state, uint8_t reg)
+{
+	uint8_t tmp = state->a - reg;
+	state->cf.cy = (state->a < reg);
+	state->cf.z = (state->a == reg);
+	state->cf.s = (tmp == 0);
+	state->cf.p = byte_parity(tmp);
+	state->cf.ac = ((state->a & 0xf) < (reg & 0xf));
+}
+
 int emulate_8080(struct State8080 *state)
 {
 	uint8_t *state_mem = state->memory;
@@ -726,6 +765,11 @@ int emulate_8080(struct State8080 *state)
 				state->cf.ac = 1;
 				state->a += 6;
 			}
+			else
+			{
+				state->cf.ac = 0;
+			}
+			
 			if ( ((state->a  & 0xf0) > 0x90) || state->cf.cy)
 			{
 				state->cf.cy = 1;
@@ -735,6 +779,185 @@ int emulate_8080(struct State8080 *state)
 			state->cf.p = byte_parity( state->a );
 			state->cf.z = (state->a == 0);
 			break;
+
+		// ANA r
+		case 0xa0:
+			and_8080(state, state->b);
+			break;
+		case 0xa1:
+			and_8080(state, state->c);
+			break;
+		case 0xa2:
+			and_8080(state, state->d);
+			break;
+		case 0xa3:
+			and_8080(state, state->e);
+			break;
+		case 0xa4:
+			and_8080(state, state->h);
+			break;
+		case 0xa5:
+			and_8080(state, state->l);
+			break;
+		case 0xa7:
+			and_8080(state, state->a);
+			break;
+
+		// ANA M
+		case 0xa6:
+			and_8080(state, state_mem[combine_two_8bit(state->l, state->h)]);
+			break;
+
+		// ANI data
+		case 0xe6:
+			and_8080(state, opcode[1]);
+			state->cf.ac = 0;
+			break;
+
+		// XRA r
+		case 0xa8:
+			xor_8080(state, state->b);
+			break;
+		case 0xa9:
+			xor_8080(state, state->c);
+			break;
+		case 0xaa:
+			xor_8080(state, state->d);
+			break;
+		case 0xab:
+			xor_8080(state, state->e);
+			break;
+		case 0xac:
+			xor_8080(state, state->h);
+			break;
+		case 0xad:
+			xor_8080(state, state->l);
+			break;
+		case 0xaf:
+			xor_8080(state, state->a);
+			break;
+
+		// XRA M
+		case 0xae:
+			xor_8080(state, state_mem[combine_two_8bit(state->l, state->h)]);
+			break;
+
+		// XRI data
+		case 0xee:
+			xor_8080(state, opcode[1]);
+			break;
+
+		// ORA r
+		case 0xb0:
+			or_8080(state, state->b);
+			break;
+		case 0xb1:
+			or_8080(state, state->c);
+			break;
+		case 0xb2:
+			or_8080(state, state->d);
+			break;
+		case 0xb3:
+			or_8080(state, state->e);
+			break;
+		case 0xb4:
+			or_8080(state, state->h);
+			break;
+		case 0xb5:
+			or_8080(state, state->l);
+			break;
+		case 0xb7:
+			or_8080(state, state->a);
+			break;
+
+		// ORA M
+		case 0xb6:
+			or_8080(state, state_mem[combine_two_8bit(state->l, state->h)]);
+			break;
+
+		// ORI data
+		case 0xf6:
+			or_8080(state, opcode[1]);
+			break;
+
+		// CMP r
+		case 0xb8:
+			cmp_8080(state, state->b);
+			break;
+		case 0xb9:
+			cmp_8080(state, state->c);
+			break;
+		case 0xba:
+			cmp_8080(state, state->d);
+			break;
+		case 0xbb:
+			cmp_8080(state, state->e);
+			break;
+		case 0xbc:
+			cmp_8080(state, state->h);
+			break;
+		case 0xbd:
+			cmp_8080(state, state->l);
+			break;
+		case 0xbf:
+			cmp_8080(state, state->a);
+			break;
+
+		// CMP M
+		case 0xbe:
+			cmp_8080(state, state_mem[combine_two_8bit(state->l, state->h)]);
+			break;
+
+		// CPI data
+		case 0xfe:
+			cmp_8080(state, opcode[1]);
+			break;
+
+		// RLC
+		case 0x07:
+			state->cf.cy = state->a >> 8;
+			state->a = (state->a << 1) | state->cf.cy;
+			break;
+
+		// RRC
+		case 0x0f:
+			state->cf.cy = state->a & 0x01;
+			state->a = (state->cf.cy << 8) | (state->a >> 1);
+			break;
+
+		// RAL
+		case 0x17:
+			{
+				uint8_t tmp = state->a >> 8;
+				state->a = (state->a << 1) | state->cf.cy;
+				state->cf.cy = tmp;
+			}
+			break;
+
+		// RAR
+		case 0x1f:
+			{
+				uint8_t tmp = state->a & 0x01;
+				state->a = (state->cf.cy << 8) | (state->a >> 1);
+				state->cf.cy = tmp;
+			}
+			break;
+
+		// CMA
+		case 0x2f:
+			state->a = ~state->a;
+			break;
+
+		// CMC
+		case 0x3f:
+			state->cf.cy = ~state->cf.cy;
+			break;
+
+		// STC
+		case 0x37:
+			state->cf.cy = 1;
+			break;
+
 
 		default:
 			break;
