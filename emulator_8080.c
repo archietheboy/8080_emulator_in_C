@@ -335,7 +335,7 @@ int emulate_8080(struct State8080 *state)
 {
 	uint8_t *state_mem = state->memory;
 	unsigned char *opcode = &state_mem[state->pc];	// '->' has higher precedence than '&'
-
+	printf("opcode:\t0x%02x", *opcode);
 	switch (*opcode)
 	{
 		// MOV r1,r2
@@ -1298,16 +1298,58 @@ int emulate_8080(struct State8080 *state)
 			puts("missing instruction!!!");
 			break;
 	}
+	printf("\tC=%d,P=%d,S=%d,Z=%d\n", state->cf.cy, state->cf.p, state->cf.s, state->cf.z);
+	printf("\tA $%02x B $%02x C $%02x D $%02x E $%02x H $%02x L $%02x SP %04x\n",    
+           state->a, state->b, state->c, state->d,    
+           state->e, state->h, state->l, state->sp);      
 	state->pc++;
 	return 0;
 }
 
-int main(int argc, char **argv)
+void initialize_state(struct State8080 *state, uint16_t pc, uint8_t *buffer)
 {
-	size_t size1 = sizeof(struct ConditionFlags);
-	size_t size2 = sizeof(struct State8080);
-	printf("uint8_t pointer size: %zu\n", sizeof(uint8_t *));
-	printf("Size of struct: %zu\n", size1);
-	printf("Size of state: %zu\n", size2);
+	state->pc = pc;
+	state->cf.ac = 0;
+	state->cf.cy = 0;
+	state->cf.p = 0;
+	state->cf.s = 0;
+	state->cf.z = 0;
+	state->a = 0;
+	state->b = 0;
+	state->c = 0;
+	state->d = 0;
+	state->e = 0;
+	state->h = 0;
+	state->l = 0;
+	state->int_enable = 0;
+	state->sp = 0;
+	state->memory = buffer;
+}
+
+int main(int argc, char *argv[])
+{
+	FILE *f = fopen(argv[1], "rb"); // open binary file in read-only mode
+	if ( f == NULL )
+	{
+		printf("error: Could not open %s\n", argv[1]);
+		exit(1);
+	}
+
+	// Get the file size and read it into a memory buffer
+	fseek(f, 0L, SEEK_END); // Set position of pointer to end of file
+	int fsize = ftell(f); // Get position of file pointer, i.e. how big the file is
+	fseek(f, 0L, SEEK_SET); // Reset position
+
+	unsigned char *buffer = malloc(fsize); // Allocate memory equal to the size of the file
+
+	fread(buffer, fsize, 1, f); // read into buffer the first byte of f
+	fclose(f);
+
+	struct State8080 state;
+	initialize_state(&state, 0, buffer);
+	while ( state.pc < fsize )
+	{
+		emulate_8080(&state);
+	}
 	return 0;
 }
