@@ -35,7 +35,7 @@ void unassigned_instruction(struct State8080 *state)
 	exit(EXIT_FAILURE);
 }
 
-uint8_t combine_two_8bit(uint8_t byte1, uint8_t byte2)
+uint16_t combine_two_8bit(uint8_t byte1, uint8_t byte2)
 {
 	return (byte2 << 8) | byte1;
 }
