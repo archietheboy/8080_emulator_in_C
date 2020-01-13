@@ -1299,9 +1299,7 @@ int emulate_8080(struct State8080 *state)
 			break;
 	}
 	printf("\tC=%d,P=%d,S=%d,Z=%d\n", state->cf.cy, state->cf.p, state->cf.s, state->cf.z);
-	printf("\tA $%02x B $%02x C $%02x D $%02x E $%02x H $%02x L $%02x SP %04x\n",    
-           state->a, state->b, state->c, state->d,    
-           state->e, state->h, state->l, state->sp);      
+	printf("\tA $%02x B $%02x C $%02x D $%02x E $%02x H $%02x L $%02x SP %04x\n", state->a, state->b, state->c, state->d, state->e, state->h, state->l, state->sp);      
 	state->pc++;
 	return 0;
 }
