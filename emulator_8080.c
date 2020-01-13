@@ -31,6 +31,7 @@ void unassigned_instruction(struct State8080 *state)
 {
 	// Needs to undo pc as it has already advanced
 	puts("Error: unassigned instruction");
+	printf("Instruction: 0x%04x", state->pc);
 	exit(EXIT_FAILURE);
 }
 
@@ -337,30 +338,6 @@ int emulate_8080(struct State8080 *state)
 
 	switch (*opcode)
 	{
-		// NOP
-		case 0x00:
-			break;
-
-		// LXI rp,data16
-		case 0x01:
-			state->b = opcode[2];
-			state->c = opcode[1];
-			state->pc+=2;			// advance PC to the end of instruction
-			break;
-		case 0x11:
-			state->d = opcode[2];
-			state->e = opcode[1];
-			state->pc+=2;
-			break;
-		case 0x21:
-			state->h = opcode[2];
-			state->l = opcode[1];
-			state->pc+=2;
-		case 0x31:
-			state->sp = combine_two_8bit(opcode[1], opcode[2]);
-			state->pc+=2;
-			break;
-		
 		// MOV r1,r2
 		case 0x40:
 			break;
@@ -521,8 +498,6 @@ int emulate_8080(struct State8080 *state)
 		case 0x6e:
 			state->l = state_mem[combine_two_8bit(state->l, state->h)];
 			break;
-		case 0x76:
-			break;
 		case 0x7e:
 			state->a = state_mem[combine_two_8bit(state->l, state->h)];
 			break;
@@ -585,26 +560,46 @@ int emulate_8080(struct State8080 *state)
 			state_mem[combine_two_8bit(state->l, state->h)] = opcode[1];
 			state->pc++;
 			break;
-		
+
+		// LXI rp,data16
+		case 0x01:
+			state->b = opcode[2];
+			state->c = opcode[1];
+			state->pc+=2;			// advance PC to the end of instruction
+			break;
+		case 0x11:
+			state->d = opcode[2];
+			state->e = opcode[1];
+			state->pc+=2;
+			break;
+		case 0x21:
+			state->h = opcode[2];
+			state->l = opcode[1];
+			state->pc+=2;
+		case 0x31:
+			state->sp = combine_two_8bit(opcode[1], opcode[2]);
+			state->pc+=2;
+			break;
+
 		// LDA addr
 		case 0x3a:
 			state->a = state_mem[combine_two_8bit(opcode[1], opcode[2])];
 			state->pc += 2;
 			break;
-		
+
 		// STA addr
 		case 0x32:
 			state_mem[combine_two_8bit(opcode[1], opcode[2])] = state->a;
 			state->pc += 2;
 			break;
-		
+
 		// LHLD addr
 		case 0x2a:
 			state->l = state_mem[combine_two_8bit(opcode[1], opcode[2])];
 			state->h = state_mem[combine_two_8bit(opcode[1], opcode[2]) + 1];
 			state->pc += 2;
 			break;
-		
+
 		// SHLD addr
 		case 0x22:
 			state_mem[combine_two_8bit(opcode[1], opcode[2])] = state->l;
@@ -1195,7 +1190,112 @@ int emulate_8080(struct State8080 *state)
 			state->pc = combine_two_8bit(state->l, state->h);
 			break;
 
+		// PUSH rp
+		case 0xc5:
+			state_mem[state->sp - 1] = state->b;
+			state_mem[state->sp - 2] = state->c;
+			state->sp -= 2;
+			break;
+		case 0xd5:
+			state_mem[state->sp - 1] = state->d;
+			state_mem[state->sp - 2] = state->e;
+			state->sp -= 2;
+			break;
+		case 0xe5:
+			state_mem[state->sp - 1] = state->h;
+			state_mem[state->sp - 2] = state->l;
+			state->sp -= 2;
+			break;
+
+		// PUSH PSW
+		case 0xf5:
+			state_mem[state->sp - 1] = state->a;
+			state_mem[state->sp - 2] = (state->cf.s << 7) | (state->cf.z << 6) | (state->cf.ac << 4) | (state->cf.p << 2) | 0x2 | state->cf.cy;
+			state->sp -= 2;
+			break;
+
+		// POP rp
+		case 0xc1:
+			state->c = state_mem[state->sp];
+			state->b = state_mem[state->sp + 1];
+			state->sp += 2;
+			break;
+		case 0xd1:
+			state->c = state_mem[state->sp];
+			state->b = state_mem[state->sp + 1];
+			state->sp += 2;
+			break;
+		case 0xe1:
+			state->c = state_mem[state->sp];
+			state->b = state_mem[state->sp + 1];
+			state->sp += 2;
+			break;
+
+		// POP PSW
+		case 0xf1:
+			{
+				uint8_t word = state_mem[state->sp];
+				state->cf.cy = word & 0x1;
+				state->cf.p = (word >> 2) & 0x1;
+				state->cf.ac = (word >> 4) & 0x1;
+				state->cf.z = (word >> 6) & 0x1;
+				state->cf.s = (word >> 7) & 0x1;
+			}
+			state->a = state_mem[state->sp + 1];
+			state->sp += 2;
+			break;
+
+		// XTHL
+		case 0xe3:
+			{
+				uint8_t tmp = state_mem[state->sp];
+				state_mem[state->sp] = state->l;
+				state->l = tmp;
+				tmp = state_mem[state->sp + 1];
+				state_mem[state->sp + 1] = state->h;
+				state->h = tmp;
+			}
+			break;
+
+		// SPHL
+		case 0xf9:
+			state->sp = combine_two_8bit(state->l, state->h);
+			break;
+
+		// IN port
+		case 0xdb:
+			printf("IN    #0x%02x", opcode[1]);
+			state->pc++;
+			break;
+
+		// OUT port
+		case 0xd3:
+			printf("OUT   #0x%02x", opcode[1]);
+			state->pc++;
+			break;
+
+		// EI
+		case 0xfb:
+			printf("EI");
+			state->int_enable = 1;
+			break;
+
+		// DI
+		case 0xf3:
+			unassigned_instruction(state);
+			break;
+
+		// HLT
+		case 0x76:
+			unassigned_instruction(state);
+			break;
+
+		// NOP
+		case 0x00:
+			break;
+
 		default:
+			puts("missing instruction!!!");
 			break;
 	}
 	state->pc++;
